@@ -4,12 +4,9 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.dhenis.polomorfismo.herencia.Hijo;
-import com.dhenis.polomorfismo.herencia.Madre;
-import com.dhenis.polomorfismo.herencia.Padre;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.dhenis.polomorfismo.polimorfismo.Animal;
+import com.dhenis.polomorfismo.polimorfismo.Cat;
+import com.dhenis.polomorfismo.polimorfismo.Dog;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,8 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        List<Padre> padreList = new ArrayList<>();
+        /*List<Padre> padreList = new ArrayList<>();
         padreList.add(new Padre(0, "German", "Gonzalo", "Quispe", 39));
         padreList.add(new Padre(1, "Gerardo", "Valencia", "Quiños", 41));
         padreList.add(new Padre(2, "Alejandro", "Perez", "Garcia", 33));
@@ -46,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Apellido paterno: " + hijosList.get(id).getApellido_p());
         System.out.println("Apellido materno: " + hijosList.get(id).getApellido_m());
         System.out.println("Edad del hijo: " + hijosList.get(id).getEdad());
-        System.out.println("==========================================");
+        System.out.println("==========================================");*/
+        Animal a = new Cat();
+        a.makeSound();
+        Animal b = new Dog();
+        b.makeSound();
+
     }
 }
