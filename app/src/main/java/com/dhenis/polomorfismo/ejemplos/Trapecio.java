@@ -25,7 +25,7 @@ public class Trapecio {
 
     public void setH(Integer h) {
         this.h = h;
-    } 
+    }
 
     public Integer getB() {
         return b;
