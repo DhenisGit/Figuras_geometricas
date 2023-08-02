@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btnPadres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Padre.class);
+                Intent intent = new Intent(MainActivity.this, PadreActivity.class);
                 startActivity(intent);
             }
         });
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnMadres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Madre.class);
+                Intent intent = new Intent(MainActivity.this, MadreActivity.class);
                 startActivity(intent);
             }
         });

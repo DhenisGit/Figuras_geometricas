@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="#333333"
     android:layout_height="match_parent"
-    tools:context=".Madre">
+    tools:context=".MadreActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

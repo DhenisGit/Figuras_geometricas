@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
-    app:cardCornerRadius="5dp"
+    app:cardCornerRadius="3dp"
+    android:backgroundTint="#333"
     android:elevation="4dp"
     app:cardUseCompatPadding="true">
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,61 +20,77 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="1dp">
-            <ImageView
-                android:id="@+id/imagenview"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:paddingLeft="14dp"
-                android:paddingRight="14dp"
-                android:background="@drawable/persona"
-                android:layout_alignParentLeft="true"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:backgroundTint="#B4CACB"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="3dp"
+                app:cardCornerRadius="50dp">
+                <ImageView
+                    android:id="@+id/imagenview1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp" />
+            </androidx.cardview.widget.CardView>
             <LinearLayout
-                android:id="@+id/linerlayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="2dp"
-                android:layout_toEndOf="@+id/imagenview"
-                android:orientation="vertical"
-                android:layout_marginLeft="4dp"
-                android:layout_toRightOf="@+id/imagenview">
+                android:layout_width="210dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="60dp"
+                android:orientation="vertical">
                 <TextView
                     android:id="@+id/textname"
+                    android:textColor="#FFFFFF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:text=" German Gonzalo Quispe"
-                    android:textColor="@color/white"
                     android:textSize="15sp"/>
-                <TextView
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="6dp"
-                    android:id="@+id/textlaboral"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="Puesto laboral"
-                    android:textSize="15sp"/>
-            </LinearLayout>
+                    android:layout_marginStart="5dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/textlaboral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Puesto laboral"
+                        android:textColor="#9B9B9B"
+                        android:textSize="10sp" />
 
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginStart="-70dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/img" />
+                </LinearLayout>
+            </LinearLayout>
             <TextView
                 android:id="@+id/estatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:textColor="#FFFFFF"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="6dp"
                 android:layout_marginTop="10dp"
-                android:text="39 años"
+                android:text="39 aÃ±os"
                 android:textSize="13sp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:textColor="#FFFFFF"
                 android:layout_alignParentRight="true"
                 android:text="Estado civil :"
                 android:layout_marginEnd="45dp"
@@ -81,11 +98,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
                 android:text="C"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="35dp"
-                android:layout_marginEnd="17dp"
-                />
+                android:layout_marginEnd="17dp" />
         </RelativeLayout>
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>
