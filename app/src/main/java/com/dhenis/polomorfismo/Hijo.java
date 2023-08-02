@@ -1,10 +1,10 @@
 package com.dhenis.polomorfismo.ejemplos;
 
-public class Rectangulo {
+public class Hijo {
     private final double base;
     private final double altura;
 
-    public Rectangulo(double base, double altura) {
+    public Hijo(double base, double altura) {
         this.base = base;
         this.altura = altura;
     }

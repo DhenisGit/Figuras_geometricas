@@ -1,10 +1,10 @@
 package com.dhenis.polomorfismo.ejemplos;
 
-public class Cuadrado {
+public class Madre {
     Integer lado1;
     Integer lado2;
 
-    public Cuadrado(Integer lado1, Integer lado2) {
+    public Madre(Integer lado1, Integer lado2) {
         this.lado1 = lado1;
         this.lado2 = lado2;
     }
