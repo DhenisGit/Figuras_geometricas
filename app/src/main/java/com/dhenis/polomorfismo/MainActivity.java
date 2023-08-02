@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.dhenis.polomorfismo.ejemplos.Circulo;
 import com.dhenis.polomorfismo.ejemplos.Cuadrado;

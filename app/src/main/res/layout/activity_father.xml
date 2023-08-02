@@ -4,38 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_gravity="center_horizontal"
-    android:background="@color/black"
+    android:background="#B4CACB"
+    android:divider="@android:drawable/ic_menu_search"
+    android:orientation="vertical"
     tools:context=".listado.FatherActivity">
 
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btn_return"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/rounde" />
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/rounde" >
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/img_flecha" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <EditText
-                    android:layout_width="298dp"
+                    android:layout_width="292dp"
                     android:layout_height="31dp"
-                    android:foregroundTint="#0B0B0B"
-                    android:background="@drawable/circle"
-                    android:hint="Buscar un father de familia"
-                    android:inputType="text"
-                    android:paddingStart="25sp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginRight="15dp"
-                    android:textColor="#B2B1B1"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle"
+                    android:drawableEnd="@android:drawable/ic_menu_search"
+                    android:drawableTint="#565656"
+                    android:drawablePadding="5dp"
+                    android:paddingEnd="15dp"
+                    android:ems="10"
+                    android:inputType="text"
                     android:textSize="11sp"
+                    android:paddingStart="25sp"
+                    android:hint="Buscar un father de familia"
+                    android:textColor="#B2B1B1"
                     android:textStyle="normal" />
+
+                <!--<EditText-->
+<!--                    android:layout_width="298dp"-->
+<!--                    android:layout_height="31dp"-->
+<!--                    android:layout_marginLeft="30dp"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    android:layout_marginRight="15dp"-->
+<!--                    android:background="@drawable/circle"-->
+<!--                    android:foregroundTint="#0B0B0B"-->
+<!--                    android:hint="Buscar un father de familia"-->
+<!--                    android:inputType="text"-->
+<!--                    android:paddingStart="25sp"-->
+<!--                    android:textColor="#B2B1B1"-->
+<!--                    android:textSize="11sp"-->
+<!--                    android:textStyle="normal" />-->
 
         </LinearLayout>
 
