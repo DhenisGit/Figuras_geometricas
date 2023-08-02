@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.dhenis.polomorfismo.ejemplos.AreaTetaedro;
 import com.dhenis.polomorfismo.ejemplos.Circulo;
 import com.dhenis.polomorfismo.ejemplos.Cuadrado;
 import com.dhenis.polomorfismo.ejemplos.Rectangulo;
@@ -63,5 +64,21 @@ public class MainActivity extends AppCompatActivity {
         /*========================RECTANGULO===============================*/
         Rectangulo rectangulo = new Rectangulo(10, 8);
         rectangulo.calcularArea();
+
+
+        /*========================TETRAEDRO REGULAR ===============================*/
+        /*======================  METODO GET ===============================*/
+        AreaTetaedro areaTetaedro = new AreaTetaedro(7);
+
+        double calcular = areaTetaedro.getLogintud();
+        System.out.println("Valor: " + calcular);
+        areaTetaedro.calcularArea();
+
+        /*========================METODO SETTER ==============================*/
+        areaTetaedro.setLogintud(5);
+        double nuevoCalcular = areaTetaedro.getLogintud();
+        System.out.println("Nuevo valorcito: " + nuevoCalcular);
+        areaTetaedro.calcularArea();
+
     }
 }
