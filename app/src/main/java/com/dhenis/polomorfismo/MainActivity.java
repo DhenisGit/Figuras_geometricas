@@ -1,6 +1,9 @@
 package com.dhenis.polomorfismo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,32 +11,56 @@ import com.dhenis.polomorfismo.ejemplos.Circulo;
 import com.dhenis.polomorfismo.ejemplos.Cuadrado;
 import com.dhenis.polomorfismo.ejemplos.Rectangulo;
 import com.dhenis.polomorfismo.ejemplos.Trapecio;
+import com.dhenis.polomorfismo.listado.FatherActivity;
+import com.dhenis.polomorfismo.listado.MatherActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button btn_father;
+    Button btn_mather;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btn_father =findViewById(R.id.btn_father);
+        btn_mather = findViewById(R.id.btn_mather);
+
+        btn_father.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, FatherActivity.class));
+
+            }
+        });
+
+        btn_mather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MatherActivity.class));
+
+            }
+        });
+
         /*===================TRAPECIO====================================*/
 
-        Trapecio trapecio = new Trapecio(10, 7, 3);
-
-        Integer b = trapecio.getB();
-        System.out.println("Valor b: " + b);
-        Integer C = trapecio.getC();
-        System.out.println("Valor C: " + C);
-        Integer h = trapecio.getH();
-        System.out.println("Valor h: " + h);
-
-        Integer resultado_trapecio = (b + C) * h;
-        Double resultado_total = (double) (resultado_trapecio / 5);
-
-        System.out.println("Total de A: " + resultado_total);
+//        Trapecio trapecio = new Trapecio(10, 7, 3);
+//
+//        Integer b = trapecio.getB();
+//        System.out.println("Valor b: " + b);
+//        Integer C = trapecio.getC();
+//        System.out.println("Valor C: " + C);
+//        Integer h = trapecio.getH();
+//        System.out.println("Valor h: " + h);
+//
+//        Integer resultado_trapecio = (b + C) * h;
+//        Double resultado_total = (double) (resultado_trapecio / 5);
+//
+//        System.out.println("Total de A: " + resultado_total);
 
         /*=================================================================*/
-
+/*
         System.out.println("=======================================");
 
         trapecio.setB(5);
@@ -51,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         Integer resultafo_trepae1 = (b_1 + C_2) * h_3;
         Integer resultado_final = (resultafo_trepae1 / 8);
 
-        System.out.println("Total de set:" + resultado_final);
+        System.out.println("Total de set:" + resultado_final);*/
 
         /*===============================================================*/
         /*===================CIRCULO====================================*/
