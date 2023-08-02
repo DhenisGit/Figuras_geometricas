@@ -1,14 +1,13 @@
 package com.dhenis.polomorfismo.modelos;
 
 public class Father {
-
-    /*private Integer id;
+    private  Integer id;
     private String nombre;
     private String apellido_p;
     private String apellido_m;
     private Integer edad;
 
-    public Padre(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad) {
+    public Father(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad) {
         this.id = id;
         this.nombre = nombre;
         this.apellido_p = apellido_p;
@@ -55,5 +54,4 @@ public class Father {
     public void setEdad(Integer edad) {
         this.edad = edad;
     }
-*/
 }

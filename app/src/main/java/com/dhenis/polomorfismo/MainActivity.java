@@ -14,6 +14,12 @@ import com.dhenis.polomorfismo.ejemplos.Rectangulo;
 import com.dhenis.polomorfismo.ejemplos.Trapecio;
 import com.dhenis.polomorfismo.listado.FatherActivity;
 import com.dhenis.polomorfismo.listado.MatherActivity;
+import com.dhenis.polomorfismo.modelos.Father;
+import com.dhenis.polomorfismo.modelos.Mather;
+import com.dhenis.polomorfismo.modelos.Son;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +49,68 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        /*=====================================FATHER==============================================================================*/
+        List<Father> fatherList = new ArrayList<>();
+            fatherList.add(new Father(0, "Diego", "Mendoza", "Chavez", 41));
+            fatherList.add(new Father(1, "Dhenis", "Aguado", "Mendez", 41));
+            fatherList.add(new Father(2, "Cesar", "Mendoza", "Chavez", 41));
+            fatherList.add(new Father(3, "Diego", "Mendoza", "Chavez", 41));
+            fatherList.add(new Father(4, "Diego", "Mendoza", "Chavez", 41));
+            fatherList.add(new Father(5, "Diego", "Mendoza", "Chavez", 41));
+            fatherList.add(new Father(6, "Diego", "Mendoza", "Chavez", 41));
+            fatherList.add(new Father(7, "Diego", "Mendoza", "Chavez", 41));
+            fatherList.add(new Father(8, "Diego", "Mendoza", "Chavez", 41));
+            fatherList.add(new Father(9, "Diego", "Mendoza", "Chavez", 41));
+            fatherList.add(new Father(10, "Diego", "Mendoza", "Chavez", 41));
+            fatherList.add(new Father(11, "Diego", "Mendoza", "Chavez", 41));
+            fatherList.add(new Father(11, "Diego", "Mendoza", "Chavez", 41));
+
+     /*=====================================MATHER==============================================================================*/
+
+        List<Mather> matherList = new ArrayList<>();
+            matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34));
+            matherList.add(new Mather(1, "Luz", "Medina", "Quiroz", 34));
+            matherList.add(new Mather(2, "Luz", "Medina", "Quiroz", 34));
+            matherList.add(new Mather(3, "Luz", "Medina", "Quiroz", 34));
+            matherList.add(new Mather(4, "Luz", "Medina", "Quiroz", 34));
+            matherList.add(new Mather(5, "Luz", "Medina", "Quiroz", 34));
+            matherList.add(new Mather(6, "Luz", "Medina", "Quiroz", 34));
+            matherList.add(new Mather(7, "Luz", "Medina", "Quiroz", 34));
+            matherList.add(new Mather(8, "Luz", "Medina", "Quiroz", 34));
+            matherList.add(new Mather(9, "Luz", "Medina", "Quiroz", 34));
+            matherList.add(new Mather(10, "Luz", "Medina", "Quiroz", 34));
+            matherList.add(new Mather(11, "Luz", "Medina", "Quiroz", 34));
+            matherList.add(new Mather(12, "Luz", "Medina", "Quiroz", 34));
+
+          /*============================SON==========================================================================================*/
+
+        int id = 1;
+        id = fatherList.get(id).getId();
+        List<Son> sonList = new ArrayList<>();
+            sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
+            sonList.add(new Son(1, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
+            sonList.add(new Son(2, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
+            sonList.add(new Son(3, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
+            sonList.add(new Son(4, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
+            sonList.add(new Son(5, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
+            sonList.add(new Son(6, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
+            sonList.add(new Son(7, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
+            sonList.add(new Son(8, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
+            sonList.add(new Son(9, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
+            sonList.add(new Son(10, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
+            sonList.add(new Son(11, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
+            sonList.add(new Son(12, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
+
+        /*==================================================================================================================================*/
+
+            System.out.println("==========================================");
+            System.out.println("ID del hijo: " + sonList.get(id).getId());
+            System.out.println("Nombre del hijo: " + sonList.get(id).getNombre());
+            System.out.println("Apellido paterno: " + sonList.get(id).getApellido_p());
+            System.out.println("Apellido materno: " + sonList.get(id).getApellido_m());
+            System.out.println("Edad del hijo: " + sonList.get(id).getEdad());
+            System.out.println("==========================================");
 
         /*===================TRAPECIO====================================*/
 
