@@ -1,17 +1,7 @@
-package com.dhenis.polomorfismo.ejemplos;
+package com.dhenis.polomorfismo;
 
-public class Hijo {
-    private final double base;
-    private final double altura;
-
-    public Hijo(double base, double altura) {
-        this.base = base;
-        this.altura = altura;
+public class Hijo extends Padre {
+    public Hijo(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad) {
+        super(id, nombre, apellido_p, apellido_m, edad);
     }
-
-    public void calcularArea() {
-        double area = base * altura;
-        System.out.println("El área del rectángulo es: " + area);
-    }
-
 }

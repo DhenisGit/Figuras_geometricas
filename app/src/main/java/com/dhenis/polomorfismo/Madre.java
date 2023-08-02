@@ -1,27 +1,57 @@
-package com.dhenis.polomorfismo.ejemplos;
+package com.dhenis.polomorfismo;
 
 public class Madre {
-    Integer lado1;
-    Integer lado2;
+    private Integer id;
+    private String nombre;
+    private String apellido_p;
+    private String apellido_m;
+    private Integer edad;
 
-    public Madre(Integer lado1, Integer lado2) {
-        this.lado1 = lado1;
-        this.lado2 = lado2;
+    public Madre(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido_p = apellido_p;
+        this.apellido_m = apellido_m;
+        this.edad = edad;
     }
 
-    public Integer getLado1() {
-        return lado1;
+    public Integer getId() {
+        return id;
     }
 
-    public void setLado1(Integer lado1) {
-        this.lado1 = lado1;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getLado2() {
-        return lado2;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setLado2(Integer lado2) {
-        this.lado2 = lado2;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido_p() {
+        return apellido_p;
+    }
+
+    public void setApellido_p(String apellido_p) {
+        this.apellido_p = apellido_p;
+    }
+
+    public String getApellido_m() {
+        return apellido_m;
+    }
+
+    public void setApellido_m(String apellido_m) {
+        this.apellido_m = apellido_m;
+    }
+
+    public Integer getEdad() {
+        return edad;
+    }
+
+    public void setEdad(Integer edad) {
+        this.edad = edad;
     }
 }
