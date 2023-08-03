@@ -6,13 +6,17 @@ public class Mather {
     private String apellido_p;
     private String apellido_m;
     private Integer edad;
+    private String puesto_laboral;
+    private String estado_civil;
 
-    public Mather(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad) {
+    public Mather(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad, String puesto_laboral, String estado_civil) {
         this.id = id;
         this.nombre = nombre;
         this.apellido_p = apellido_p;
         this.apellido_m = apellido_m;
         this.edad = edad;
+        this.puesto_laboral = puesto_laboral;
+        this.estado_civil = estado_civil;
     }
 
     public Integer getId() {
@@ -53,5 +57,21 @@ public class Mather {
 
     public void setEdad(Integer edad) {
         this.edad = edad;
+    }
+
+    public String getPuesto_laboral() {
+        return puesto_laboral;
+    }
+
+    public void setPuesto_laboral(String puesto_laboral) {
+        this.puesto_laboral = puesto_laboral;
+    }
+
+    public String getEstado_civil() {
+        return estado_civil;
+    }
+
+    public void setEstado_civil(String estado_civil) {
+        this.estado_civil = estado_civil;
     }
 }
