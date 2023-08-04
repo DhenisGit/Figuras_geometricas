@@ -1,15 +1,15 @@
 package com.dhenis.polomorfismo.modelos;
 
-public class ListElementFather {
-    public String img;
-    public String name;
-    public String apellido_p;
-    public String apellido_m;
-    public String puesto_laboral;
-    public Integer anos;
-    public String resulta;
+public class ListElement {
+    private String img;
+    private String name;
+    private String apellido_p;
+    private String apellido_m;
+    private String puesto_laboral;
+    private Integer anos;
+    private String resulta;
 
-    public ListElementFather(String img, String name, String apellido_p, String apellido_m, String puesto_laboral, Integer anos, String resulta) {
+    public ListElement(String img, String name, String apellido_p, String apellido_m, String puesto_laboral, Integer anos, String resulta) {
         this.img = img;
         this.name = name;
         this.apellido_p = apellido_p;

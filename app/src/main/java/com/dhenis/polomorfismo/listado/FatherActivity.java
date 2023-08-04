@@ -12,14 +12,14 @@ import android.view.View;
 import com.dhenis.polomorfismo.MainActivity;
 import com.dhenis.polomorfismo.R;
 
-import com.dhenis.polomorfismo.modelos.ListAdapterFather;
-import com.dhenis.polomorfismo.modelos.ListElementFather;
+import com.dhenis.polomorfismo.modelos.ListAdapter;
+import com.dhenis.polomorfismo.modelos.ListElement;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FatherActivity extends AppCompatActivity {
-    List<ListElementFather> elements;
+    private List<ListElement> elements;
 
     ConstraintLayout cl;
 
@@ -40,26 +40,26 @@ public class FatherActivity extends AppCompatActivity {
         init();
     }
 
-    public void init() {
+    private void init() {
         elements = new ArrayList<>();
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElementFather("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "H", "L", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
 
-        ListAdapterFather listAdapterFather = new ListAdapterFather(elements, this);
+        ListAdapter listAdapterFather = new ListAdapter(elements, this);
         RecyclerView recyclerView = findViewById(R.id.listRV);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
