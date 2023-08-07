@@ -20,6 +20,7 @@
         app:cornerRadius="20dp"
         android:backgroundTint="#B4CACB"/>
 
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnMadres"
         android:layout_width="150dp"
@@ -28,6 +29,5 @@
         android:text="Madres"
         android:textColor="@color/black"
         app:cornerRadius="20dp"/>
-
 
 </LinearLayout>

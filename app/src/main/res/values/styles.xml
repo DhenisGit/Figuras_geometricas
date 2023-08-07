@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Estilo base de la aplicación -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#333333</item>
+        <item name="colorPrimaryDark">#333333</item>
+        <item name="colorAccent">#333333</item>
+
+    </style>
+
+    <!-- Estilo personalizado para el ListView -->
+    <style name="ListView.NoDivider" parent="Widget.AppCompat.ListView">
+        <item name="android:divider">@android:color/transparent</item>
+        <item name="android:dividerHeight">0dp</item>
+    </style>
+
+</resources>

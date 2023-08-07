@@ -22,9 +22,6 @@
             android:name=".hijos"
             android:exported="false" />
         <activity
-            android:name=".bliii"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
