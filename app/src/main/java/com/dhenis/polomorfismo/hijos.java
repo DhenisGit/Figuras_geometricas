@@ -25,19 +25,21 @@ public class hijos extends AppCompatActivity {
         int edadHijo = intent.getIntExtra("edadHijo", 0); //Obtiene la edad del hijo
         String nombreHija = intent.getStringExtra("nombreHija");
         int edadHija = intent.getIntExtra("edadHija", 0); //Obtiene la edad de la hija
-        String nombre = intent.getStringExtra("nombre");
-        String apellidoPaterno = intent.getStringExtra("apellidoPaterno");
-        String apellidoMaterno = intent.getStringExtra("apellidoMaterno");
-        String nombreMadre = intent.getStringExtra("nombreMadre");
-        String apellidoPaternoMadre = intent.getStringExtra("apellidoPaternoMadre");
-        String apellidoMaternoMadre = intent.getStringExtra("apellidoMaternoMadre");
+        String apellidoPaterno = intent.getStringExtra("apellidoPaterno_padre");
+        String apellidoMaterno = intent.getStringExtra("apellidoMaterno_padre");
+        String nombrePadre = intent.getStringExtra("nombrePadre"); // Agregado
+        String apellidoPaternoPadre = intent.getStringExtra("apellidoPaterno_padre"); // Agregado
+        String apellidoMaternoPadre = intent.getStringExtra("apellidoMaterno_padre"); // Agregado
+        String nombreMadre = intent.getStringExtra("nombreMadre"); // Agregado
+        String apellidoPaternoMadre = intent.getStringExtra("apellidoPaternoMadre"); // Agregado
+        String apellidoMaternoMadre = intent.getStringExtra("apellidoMaternoMadre"); // Agregado
 
         // Mostrar detalles de los padres
         View includePadre = findViewById(R.id.includePadre);
         ImageView imagenViewPadre = includePadre.findViewById(R.id.imagenview);
         TextView textNamePadre = includePadre.findViewById(R.id.textnamePero);
         imagenViewPadre.setBackgroundResource(R.drawable.persona);
-        String nombreCompletoPadre = nombre + " " + apellidoPaterno + " " + apellidoMaterno;
+        String nombreCompletoPadre = nombrePadre + " " + apellidoPaternoPadre + " " + apellidoMaternoPadre;
         textNamePadre.setText(nombreCompletoPadre);
 
         View includeMadre = findViewById(R.id.includeMadre);
@@ -48,10 +50,8 @@ public class hijos extends AppCompatActivity {
         textNameMadre.setText(nombreCompletoMadre);
 
         // Mostrar detalles del hijo
-        mostrarHijoEnTextViews(nombreHijo, apellidoPaterno, apellidoMaterno, edadHijo); //Pasa la edad del hijo
-        mostrarHijaEnTextViews(nombreHija, apellidoPaterno, apellidoMaterno, edadHija); //Pasa la edad de la hija
-
-
+        mostrarHijoEnTextViews(nombreHijo, apellidoPaterno, apellidoMaterno, apellidoPaternoPadre, apellidoPaternoMadre, edadHijo); //Pasa la edad del hijo
+        mostrarHijaEnTextViews(nombreHija, apellidoPaterno, apellidoMaterno, apellidoPaternoPadre, apellidoPaternoMadre, edadHija); //Pasa la edad de la hija
 
         MaterialButton otrabusquedaButton = findViewById(R.id.otrabusqueda);
         otrabusquedaButton.setOnClickListener(new View.OnClickListener() {
@@ -63,19 +63,19 @@ public class hijos extends AppCompatActivity {
         });
     }
 
-    private void mostrarHijoEnTextViews(String nombreHijo, String apellidoPaterno, String apellidoMaterno, int edadHijo) {
+    private void mostrarHijoEnTextViews(String nombreHijo, String apellidoPaterno, String apellidoMaterno, String apellidoPaternoPadre, String apellidoPaternoMadre, int edadHijo) {
         TextView textViewNombreHijo = findViewById(R.id.textname);
         TextView textViewEdadHijo = findViewById(R.id.edadHijo); // Asegúrate de tener este TextView en tu layout
-        String nombreCompletoHijo = nombreHijo + " " + apellidoPaterno + " " + apellidoMaterno;
+        String nombreCompletoHijo = nombreHijo + " " + " " + apellidoPaternoPadre + " " + apellidoPaternoMadre;
         textViewNombreHijo.setText(nombreCompletoHijo);
-        textViewEdadHijo.setText(String.valueOf(edadHijo + " años")); // Muestra la edad del hijo
+        textViewEdadHijo.setText(String.valueOf(edadHijo) + " años"); // Muestra la edad del hijo
     }
 
-    private void mostrarHijaEnTextViews(String nombreHija, String apellidoPaterno, String apellidoMaterno, int edadHija) {
+    private void mostrarHijaEnTextViews(String nombreHija, String apellidoPaterno, String apellidoMaterno, String apellidoPaternoPadre, String apellidoPaternoMadre, int edadHija) {
         TextView textViewNombreHija = findViewById(R.id.textnameHija); // Asegúrate de tener este TextView en tu layout
         TextView textViewEdadHija = findViewById(R.id.edadHija); // Asegúrate de tener este TextView en tu layout
-        String nombreCompletoHija = nombreHija + " " + apellidoPaterno + " " + apellidoMaterno;
+        String nombreCompletoHija = nombreHija + " " + " " + apellidoPaternoPadre + " " + apellidoPaternoMadre;
         textViewNombreHija.setText(nombreCompletoHija);
-        textViewEdadHija.setText(String.valueOf(edadHija + " años")); // Muestra la edad de la hija
+        textViewEdadHija.setText(String.valueOf(edadHija) + " años"); // Muestra la edad de la hija
     }
 }

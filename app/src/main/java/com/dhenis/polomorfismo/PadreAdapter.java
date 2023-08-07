@@ -12,17 +12,25 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PadreAdapter extends ArrayAdapter<datos_padre> implements Filterable {
+public class PadreAdapter extends ArrayAdapter<datos_padre> {
 
     private List<datos_padre> originalList;
     private List<datos_padre> filteredList;
-    private Filter filter;
 
-    public PadreAdapter(Context context, List<datos_padre> padreList) {
-        super(context, 0, padreList);
-        originalList = new ArrayList<>(padreList);
-        filteredList = new ArrayList<>(padreList);
-        filter = new CustomFilter();
+    public PadreAdapter(Context context, List<datos_padre> originalList) {
+        super(context, 0, originalList);
+        this.originalList = originalList;
+        this.filteredList = new ArrayList<>(originalList);
+    }
+
+    @Override
+    public int getCount() {
+        return filteredList.size();
+    }
+
+    @Override
+    public datos_padre getItem(int position) {
+        return filteredList.get(position);
     }
 
     @Override
@@ -42,40 +50,34 @@ public class PadreAdapter extends ArrayAdapter<datos_padre> implements Filterabl
 
     @Override
     public Filter getFilter() {
-        return filter;
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String searchText = charSequence.toString().toLowerCase();
+                FilterResults results = new FilterResults();
+                List<datos_padre> filteredList = new ArrayList<>();
 
-    }
-
-    private class CustomFilter extends Filter {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            FilterResults results = new FilterResults();
-
-            if (constraint != null && constraint.length() > 0) {
-                List<datos_padre> filteredData = new ArrayList<>();
-
-                for (datos_padre item : originalList) {
-                    if (item.getNombre().toLowerCase().contains(constraint.toString().toLowerCase())) {
-                        filteredData.add(item);
+                if (searchText.isEmpty()) {
+                    filteredList.addAll(originalList); // Use originalList instead of filteredList
+                } else {
+                    for (datos_padre padre : originalList) { // Use originalList instead of filteredList
+                        if (padre.getNombre().toLowerCase().contains(searchText)||
+                        padre.getApellidoPaterno().toLowerCase().contains(searchText)||
+                        padre.getApellidoMaterno().toLowerCase().contains(searchText)) {
+                            filteredList.add(padre);
+                        }
                     }
                 }
-
-                results.count = filteredData.size();
-                results.values = filteredData;
-            } else {
-                results.count = originalList.size();
-                results.values = originalList;
+                results.values = filteredList;
+                results.count = filteredList.size();
+                return results;
             }
 
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            filteredList = (List<datos_padre>) results.values;
-            notifyDataSetChanged();
-        }
-
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                filteredList = (List<datos_padre>) filterResults.values;
+                notifyDataSetChanged();
+            }
+        };
     }
-
 }
