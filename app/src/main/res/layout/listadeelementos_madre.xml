@@ -28,11 +28,9 @@
                 android:id="@+id/imagenview"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
-                android:background="@drawable/persona"
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp" />
 
