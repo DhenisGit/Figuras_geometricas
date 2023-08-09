@@ -1,5 +1,8 @@
 package com.dhenis.polomorfismo.hijos;
 
+import com.dhenis.polomorfismo.madres.Mom;
+import com.dhenis.polomorfismo.padres.Dad;
+
 public class Son {
     Integer id;
     String image_url;
@@ -7,6 +10,8 @@ public class Son {
     String apellido_p;
     String apellido_m;
     Integer edad;
+    private Mom mom;
+    private Dad dad;
 
     public Son(Integer id, String image_url, String name, String apellido_p, String apellido_m, Integer edad) {
         this.id = id;
@@ -63,5 +68,21 @@ public class Son {
 
     public void setEdad(Integer edad) {
         this.edad = edad;
+    }
+
+    public Mom getMom() {
+        return mom;
+    }
+
+    public void setMom(Mom mom) {
+        this.mom = mom;
+    }
+
+    public Dad getDad() {
+        return dad;
+    }
+
+    public void setDad(Dad dad) {
+        this.dad = dad;
     }
 }

@@ -1,5 +1,6 @@
 package com.dhenis.polomorfismo.utils;
 
+import com.dhenis.polomorfismo.hijos.Son;
 import com.dhenis.polomorfismo.madres.Mom;
 import com.dhenis.polomorfismo.padres.Dad;
 
@@ -35,6 +36,21 @@ public class ListGenerator {
         momList.add(new Mom(9, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPS_G5Xa_kVdNyFRSWoyUZZ7FrCvOpLTMsGY6AD-SCMCuj-JZHD0e8aM_KLRmDXx2znfQ&usqp=CAU", "Camila", "Gomez", "Vargas", "Artista", 40, "C"));
         momList.add(new Mom(10, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_RfJxlPyS9l-HMvARDeJvdm9QAiocihdGUKNChq-H3Z5RgF86AmBcurdoLL4fiP4fV4&usqp=CAU", "Valentina", "Torres", "Alvarez", "Cocinera", 33, "S"));
         return momList;
+    }
+
+    public static List<Son> generateSonList() {
+        List<Son> sonList = new ArrayList<>();
+        sonList.add(new Son(1, "https://cdn-icons-png.flaticon.com/512/2829/2829758.png", "Juan", "Perez", "Gonzalez", 10));
+        sonList.add(new Son(2, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw1yiLtz68m13IaEiLne3UgyMBCXgNOZdzNG2Io1zjE1xlKUsCb1PevnTYAucKYLCTaTg&usqp=CAU", "Luis", "Garcia", "Rodriguez", 8));
+        sonList.add(new Son(3, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTygTWiLTxrPSFD-ZxOTzbQOS1MOlXNIgWqeLNOJ_JVk0UZOhmsj4DObOzTwqfSJvpzbU&usqp=CAU", "Maria", "Lopez", "Martinez", 12));
+        sonList.add(new Son(4, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7s1c2oHZ3LIo0nfBCOPjErzuzm6R-wnGMp1-goZJFO8f1XnzkS0Pm_BjdPS5CthZxWFY&usqp=CAU", "Ana", "Ramirez", "Sanchez", 9));
+        sonList.add(new Son(5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFmn7X-fL7e3oHBT_YKalbPEx90HLOqHY8OdgjOW9JgoAPPTdOZjWZ_gWbWhjX6iEyZ4I&usqp=CAU", "Carlos", "Fernandez", "Hernandez", 11));
+        sonList.add(new Son(6, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0oKuGp1ADSV5Gbj-QS2zug-ytqyfpfxBELdD-Y0JfK0_0vS5aL6LKdjdwzpUsV71khhc&usqp=CAU", "Laura", "Martinez", "Gomez", 7));
+        sonList.add(new Son(7, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTend2dhgrBR38_pjmIKZmRXq-Xs7N_aKBYFfCavL_ima2GKunWKUwWRiBab2ILMIOT8uY&usqp=CAU", "Sergio", "Diaz", "Perez", 13));
+        sonList.add(new Son(8, "https://cdn-icons-png.flaticon.com/512/548/548042.png", "Julia", "Gutierrez", "Vargas", 6));
+        sonList.add(new Son(9, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFflF1FxbB01H4N3_wNWgI9EMhh5QI2cFbnO0nrOAXG2gHaJPyN5jsIg2OcJIzN2RBUr0&usqp=CAU", "Pedro", "Lopez", "Rodriguez", 14));
+        sonList.add(new Son(10, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpmWDEKIstRyx4dQuSrzSrzegQuLYqlKsY9BFCmaUq5P8dlMtkV_2BVoGnT6SiPOx8CKk&usqp=CAU", "Valentina", "Torres", "Alvarez", 9));
+        return sonList;
     }
 
 }

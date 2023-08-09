@@ -1,6 +1,7 @@
 package com.dhenis.polomorfismo.madres;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dhenis.polomorfismo.R;
+import com.dhenis.polomorfismo.hijos.SonActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -49,6 +52,13 @@ public class MomAdapter extends RecyclerView.Adapter<MomAdapter.ViewHolder> {
         holder.txtCivilStatus.setText(mom.getEstado_civil());
         String url_profile = mom.getImage_url();
         Picasso.get().load(url_profile).error(R.drawable.ic_launcher_background).into(holder.imgProfile);
+
+        String fullName = mom.getName() + " " + mom.getApellido_p() + " " + mom.getApellido_m();
+        holder.cv_item.setOnClickListener(v -> {
+            Intent intent = new Intent(activity, SonActivity.class);
+            intent.putExtra("nameMom", fullName);
+            activity.startActivity(intent);
+        });
     }
 
     @Override
@@ -59,7 +69,7 @@ public class MomAdapter extends RecyclerView.Adapter<MomAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txtFullName, txtJob, txtAge, txtCivilStatus;
         private ImageView imgProfile;
-
+        private CardView cv_item;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -68,6 +78,7 @@ public class MomAdapter extends RecyclerView.Adapter<MomAdapter.ViewHolder> {
             txtJob = itemView.findViewById(R.id.i_prts_txtJob);
             txtAge = itemView.findViewById(R.id.i_prts_txtAge);
             txtCivilStatus = itemView.findViewById(R.id.i_prts_txtCivilStatus);
+            cv_item = itemView.findViewById(R.id.i_prts_cv);
         }
     }
 }
