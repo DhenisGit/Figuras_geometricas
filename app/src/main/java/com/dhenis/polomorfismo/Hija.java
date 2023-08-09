@@ -1,21 +1,18 @@
 package com.dhenis.polomorfismo;
 
-public class Hijo {
+public class Hija {
     private Integer id;
-    private String nombre_hijo;
+    private String nombre_hija;
     private String apellido_p;
     private String apellido_m;
-    private Integer edad_hijo;
+    private Integer edad_hija;
 
-    public Hijo(Integer id, String nombre_hijo, String apellido_p, String apellido_m, Integer edad_hijo) {
+    public Hija(Integer id, String nombre_hija, String apellido_p, String apellido_m, Integer edad_hija) {
         this.id = id;
-        this.nombre_hijo = nombre_hijo;
+        this.nombre_hija = nombre_hija;
         this.apellido_p = apellido_p;
         this.apellido_m = apellido_m;
-        this.edad_hijo = edad_hijo;
-    }
-
-    public Hijo() {
+        this.edad_hija = edad_hija;
     }
 
     public Integer getId() {
@@ -26,12 +23,12 @@ public class Hijo {
         this.id = id;
     }
 
-    public String getNombre_hijo() {
-        return nombre_hijo;
+    public String getNombre_hija() {
+        return nombre_hija;
     }
 
-    public void setNombre_hijo(String nombre_hijo) {
-        this.nombre_hijo = nombre_hijo;
+    public void setNombre_hija(String nombre_hija) {
+        this.nombre_hija = nombre_hija;
     }
 
     public String getApellido_p() {
@@ -50,11 +47,11 @@ public class Hijo {
         this.apellido_m = apellido_m;
     }
 
-    public Integer getEdad_hijo() {
-        return edad_hijo;
+    public Integer getEdad_hija() {
+        return edad_hija;
     }
 
-    public void setEdad_hijo(Integer edad_hijo) {
-        this.edad_hijo = edad_hijo;
+    public void setEdad_hija(Integer edad_hija) {
+        this.edad_hija = edad_hija;
     }
 }

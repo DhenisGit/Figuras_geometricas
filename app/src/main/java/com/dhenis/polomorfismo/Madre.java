@@ -2,17 +2,17 @@ package com.dhenis.polomorfismo;
 
 public class Madre {
     private Integer id;
-    private String nombre;
-    private String apellido_p;
-    private String apellido_m;
-    private Integer edad;
+    private String nombre_madre;
+    private String apellido_p_madre;
+    private String apellido_m_madre;
+    private Integer edad_madre;
 
-    public Madre(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad) {
+    public Madre(Integer id, String nombre_madre, String apellido_p_madre, String apellido_m_madre, Integer edad_madre) {
         this.id = id;
-        this.nombre = nombre;
-        this.apellido_p = apellido_p;
-        this.apellido_m = apellido_m;
-        this.edad = edad;
+        this.nombre_madre = nombre_madre;
+        this.apellido_p_madre = apellido_p_madre;
+        this.apellido_m_madre = apellido_m_madre;
+        this.edad_madre = edad_madre;
     }
 
     public Integer getId() {
@@ -23,35 +23,35 @@ public class Madre {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombre_madre() {
+        return nombre_madre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre_madre(String nombre_madre) {
+        this.nombre_madre = nombre_madre;
     }
 
-    public String getApellido_p() {
-        return apellido_p;
+    public String getApellido_p_madre() {
+        return apellido_p_madre;
     }
 
-    public void setApellido_p(String apellido_p) {
-        this.apellido_p = apellido_p;
+    public void setApellido_p_madre(String apellido_p_madre) {
+        this.apellido_p_madre = apellido_p_madre;
     }
 
-    public String getApellido_m() {
-        return apellido_m;
+    public String getApellido_m_madre() {
+        return apellido_m_madre;
     }
 
-    public void setApellido_m(String apellido_m) {
-        this.apellido_m = apellido_m;
+    public void setApellido_m_madre(String apellido_m_madre) {
+        this.apellido_m_madre = apellido_m_madre;
     }
 
-    public Integer getEdad() {
-        return edad;
+    public Integer getEdad_madre() {
+        return edad_madre;
     }
 
-    public void setEdad(Integer edad) {
-        this.edad = edad;
+    public void setEdad_madre(Integer edad_madre) {
+        this.edad_madre = edad_madre;
     }
 }
