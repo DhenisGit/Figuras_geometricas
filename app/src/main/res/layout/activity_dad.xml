@@ -45,6 +45,7 @@
             app:cardElevation="0dp">
 
             <EditText
+                android:id="@+id/a_dad_edt_search"
                 android:layout_width="300dp"
                 android:layout_height="32dp"
                 android:background="@color/white"
@@ -66,7 +67,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/a_dad_rv_listMoms"
+        android:id="@+id/a_dad_rv_listDads"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="15dp" />
