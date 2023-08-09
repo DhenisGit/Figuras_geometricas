@@ -2,4 +2,10 @@
     <string name="app_name">Polomorfismo</string>
     <string name="padres">Padres</string>
     <string name="madres">Madres</string>
+    <string name="todo">todo</string>
+    <string name="search_dady">Buscar un padre de familia</string>
+    <string name="search_momy">Buscar una madre de familia</string>
+    <string name="parents">Parientes</string>
+    <string name="sons_data">Datos del hijo</string>
+    <string name="another_search">Realizar otra busqueda</string>
 </resources>

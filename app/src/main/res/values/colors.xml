@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="pink">#F5D1DA</color>
     <color name="light_green">#B4CACB</color>
+    <color name="light_black">#333333</color>
+    <color name="search_txt_color">#B2B1B1</color>
 </resources>
