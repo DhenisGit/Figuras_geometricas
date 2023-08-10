@@ -1,24 +1,24 @@
 package com.dhenis.polomorfismo;
 
-import java.io.PipedReader;
-
 public class Padre {
     private Integer id;
     private String nombre;
     private String apellido_p;
     private String apliido_m;
     private Integer edad;
+    private String imageUrl;
 
     public Padre(){
 
     }
 
-    public Padre(Integer id, String nombre, String apellidoP, String apliidoM, Integer edad) {
+    public Padre(Integer id, String nombre, String apellido_p, String apliido_m, Integer edad, String imageUrl) {
         this.id = id;
         this.nombre = nombre;
-        apellido_p = apellidoP;
-        apliido_m = apliidoM;
+        this.apellido_p = apellido_p;
+        this.apliido_m = apliido_m;
         this.edad = edad;
+        this.imageUrl = imageUrl;
     }
 
     public Integer getId() {
@@ -59,5 +59,13 @@ public class Padre {
 
     public void setEdad(Integer edad) {
         this.edad = edad;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

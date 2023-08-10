@@ -7,12 +7,18 @@ public class Madre {
     private String apellido_m_madre;
     private Integer edad_madre;
 
-    public Madre(Integer id, String nombre_madre, String apellido_p_madre, String apellido_m_madre, Integer edad_madre) {
+    private String imageUrl_Madre;
+
+    public Madre() {
+    }
+
+    public Madre(Integer id, String nombre_madre, String apellido_p_madre, String apellido_m_madre, Integer edad_madre, String imageUrl_Madre) {
         this.id = id;
         this.nombre_madre = nombre_madre;
         this.apellido_p_madre = apellido_p_madre;
         this.apellido_m_madre = apellido_m_madre;
         this.edad_madre = edad_madre;
+        this.imageUrl_Madre = imageUrl_Madre;
     }
 
     public Integer getId() {
@@ -53,5 +59,13 @@ public class Madre {
 
     public void setEdad_madre(Integer edad_madre) {
         this.edad_madre = edad_madre;
+    }
+
+    public String getImageUrl_Madre() {
+        return imageUrl_Madre;
+    }
+
+    public void setImageUrl_Madre(String imageUrl_Madre) {
+        this.imageUrl_Madre = imageUrl_Madre;
     }
 }

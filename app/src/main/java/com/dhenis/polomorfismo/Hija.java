@@ -6,13 +6,15 @@ public class Hija {
     private String apellido_p;
     private String apellido_m;
     private Integer edad_hija;
+    private String imageUrl_Hija;
 
-    public Hija(Integer id, String nombre_hija, String apellido_p, String apellido_m, Integer edad_hija) {
+    public Hija(Integer id, String nombre_hija, String apellido_p, String apellido_m, Integer edad_hija, String imageUrl_Hija) {
         this.id = id;
         this.nombre_hija = nombre_hija;
         this.apellido_p = apellido_p;
         this.apellido_m = apellido_m;
         this.edad_hija = edad_hija;
+        this.imageUrl_Hija = imageUrl_Hija;
     }
 
     public Integer getId() {
@@ -53,5 +55,13 @@ public class Hija {
 
     public void setEdad_hija(Integer edad_hija) {
         this.edad_hija = edad_hija;
+    }
+
+    public String getImageUrl_Hija() {
+        return imageUrl_Hija;
+    }
+
+    public void setImageUrl_Hija(String imageUrl_Hija) {
+        this.imageUrl_Hija = imageUrl_Hija;
     }
 }

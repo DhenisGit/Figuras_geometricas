@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
+import android.widget.ImageView;
 import android.widget.TextView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +41,9 @@ public class AdapterP extends ArrayAdapter<Padre> {
         TextView text_Nombre = convertView.findViewById(R.id.text_padre);
         String Text_Completo_Nombre = padre.getNombre() +" "+padre.getApellido_p()+" "+padre.getApliido_m();
         text_Nombre.setText(Text_Completo_Nombre);
+        ImageView imageView = convertView.findViewById(R.id.imagenview1);
+        String imageUrl = padre.getImageUrl();
+        Picasso.get().load(imageUrl).into(imageView);
         return convertView;
     }
     @Override

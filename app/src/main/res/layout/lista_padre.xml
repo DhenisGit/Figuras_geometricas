@@ -9,10 +9,11 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="49dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
+        android:id="@+id/constraintLayout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bliii"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -33,15 +34,17 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="90dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buscador_padre">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <include
             android:id="@+id/include"
             layout="@layout/array_padre"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
     <SearchView
@@ -49,7 +52,7 @@
         android:layout_width="301dp"
         android:layout_height="45dp"
         android:background="@drawable/buscadorcircular"
-        android:drawableEnd="@drawable/busqueda"
+        android:drawable="@drawable/busqueda"
         android:elevation="2dp"
         android:foregroundTint="@color/black"
         android:queryHint="Buscar un padre de familia"

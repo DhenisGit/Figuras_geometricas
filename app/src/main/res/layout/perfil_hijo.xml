@@ -18,20 +18,27 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:id="@+id/imagenview"
-            android:layout_width="73dp"
-            android:layout_height="64dp"
-            android:layout_gravity="center"
-            android:layout_marginEnd="-10dp"
-            android:background="@drawable/persona"
+        <androidx.cardview.widget.CardView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/text_Hija"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintEnd_toStartOf="@+id/text_Hijo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+            <ImageView
+                android:id="@+id/imagenview"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/text_Hija"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints"/>
+        </androidx.cardview.widget.CardView>
         <TextView
-            android:id="@+id/text_Hija"
+            android:id="@+id/text_Hijo"
             android:layout_width="185dp"
             android:layout_height="35dp"
             android:gravity="center"

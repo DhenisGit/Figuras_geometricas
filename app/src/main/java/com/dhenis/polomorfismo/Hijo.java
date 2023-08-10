@@ -6,16 +6,15 @@ public class Hijo {
     private String apellido_p;
     private String apellido_m;
     private Integer edad_hijo;
+    private String imageUrl_Hijo;
 
-    public Hijo(Integer id, String nombre_hijo, String apellido_p, String apellido_m, Integer edad_hijo) {
+    public Hijo(Integer id, String nombre_hijo, String apellido_p, String apellido_m, Integer edad_hijo, String imageUrl_Hijo) {
         this.id = id;
         this.nombre_hijo = nombre_hijo;
         this.apellido_p = apellido_p;
         this.apellido_m = apellido_m;
         this.edad_hijo = edad_hijo;
-    }
-
-    public Hijo() {
+        this.imageUrl_Hijo = imageUrl_Hijo;
     }
 
     public Integer getId() {
@@ -56,5 +55,13 @@ public class Hijo {
 
     public void setEdad_hijo(Integer edad_hijo) {
         this.edad_hijo = edad_hijo;
+    }
+
+    public String getImageUrl_Hijo() {
+        return imageUrl_Hijo;
+    }
+
+    public void setImageUrl_Hijo(String imageUrl_Hijo) {
+        this.imageUrl_Hijo = imageUrl_Hijo;
     }
 }
