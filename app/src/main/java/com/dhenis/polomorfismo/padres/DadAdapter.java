@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.dhenis.polomorfismo.R;
 import com.dhenis.polomorfismo.hijos.Son;
 import com.dhenis.polomorfismo.hijos.SonActivity;
+import com.dhenis.polomorfismo.utils.ListGenerator;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -23,7 +24,6 @@ import java.util.List;
 public class DadAdapter extends RecyclerView.Adapter<DadAdapter.ViewHolder> {
     private Activity activity;
     private List<Dad> dadList;
-    private Son son;
 
     public DadAdapter(Activity activity) {
         this.activity = activity;
@@ -50,7 +50,7 @@ public class DadAdapter extends RecyclerView.Adapter<DadAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull DadAdapter.ViewHolder holder, int position) {
         Dad dad = dadList.get(position);
-        String fullName = dad.getName() + " " + dad.getApellido_p() + " " + dad.getApellido_m();
+        int id = dad.getId();
         holder.txtFullName.setText(dad.getName() + " " + dad.getApellido_p() + " " + dad.getApellido_m());
         holder.txtJob.setText(dad.getPuesto_laboral());
         holder.txtAge.setText(dad.getEdad().toString() + " años");
@@ -58,19 +58,13 @@ public class DadAdapter extends RecyclerView.Adapter<DadAdapter.ViewHolder> {
         String url_profile = dad.getImage_url();
         Picasso.get().load(url_profile).error(R.drawable.ic_launcher_background).into(holder.imgProfile);
 
-        /*holder.cv_item.setOnClickListener(v -> {
-            Intent intent = new Intent(activity, SonActivity.class);
-            intent.putExtra("nameDad", fullName);
-            activity.startActivity(intent);
-        });*/
         holder.cv_item.setOnClickListener(v -> {
             Intent intent = new Intent(activity, SonActivity.class);
-            intent.putExtra("selectedPosition", position);
+            intent.putExtra("id", id);
+            System.out.println("========================");
+            System.out.println("ITEM DAD ADAPTER ID: " + dad.getId());
+            System.out.println("========================");
             activity.startActivity(intent);
-           /* Intent intent = new Intent(activity, SonActivity.class);
-            intent.putExtra("selectedDadId", dad.getId()); // Reemplaza "selectedDadId" con el nombre adecuado
-//            intent.putExtra("selectedMomId", mom.getId()); // Reemplaza "selectedMomId" con el nombre adecuado
-            activity.startActivity(intent);*/
         });
     }
 

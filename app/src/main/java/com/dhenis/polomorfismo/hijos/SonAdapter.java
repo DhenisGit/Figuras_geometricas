@@ -20,14 +20,13 @@ public class SonAdapter extends RecyclerView.Adapter<SonAdapter.ViewHolder> {
     private Activity activity;
     private List<Son> sonList;
 
-    public SonAdapter(Activity activity) {
-        this.activity = activity;
-        this.sonList = new ArrayList<>();
+    public SonAdapter(List<Son> sonList) {
+        this.sonList = sonList;
     }
 
     public void setSonList(List<Son> sonList) {
-        this.sonList.clear();
-        this.sonList = new ArrayList<>(sonList);
+        this.sonList = sonList;
+        notifyDataSetChanged();
     }
 
     @NonNull
