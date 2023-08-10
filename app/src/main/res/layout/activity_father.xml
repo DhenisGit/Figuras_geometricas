@@ -37,6 +37,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <EditText
+                    android:id="@+id/etBuscar"
                     android:layout_width="292dp"
                     android:layout_height="31dp"
                     android:layout_marginLeft="15dp"

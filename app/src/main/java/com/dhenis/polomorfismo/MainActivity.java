@@ -51,38 +51,40 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*=====================================FATHER==============================================================================*/
+
         List<Father> fatherList = new ArrayList<>();
         fatherList.add(new Father(0, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
-        fatherList.add(new Father(1, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
-        fatherList.add(new Father(2, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
-        fatherList.add(new Father(3, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
-        fatherList.add(new Father(4, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
-        fatherList.add(new Father(5, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
-        fatherList.add(new Father(6, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
-        fatherList.add(new Father(7, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
-        fatherList.add(new Father(8, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
-        fatherList.add(new Father(9, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
-        fatherList.add(new Father(10, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
-        fatherList.add(new Father(11, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
-        fatherList.add(new Father(12, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
-        fatherList.add(new Father(13, "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
+        fatherList.add(new Father(1, "Eddie", "Elvon", "Carrion", 55, "Administrador", "C"));
+        fatherList.add(new Father(2, "Luis", "Molina", "Lopez", 41, "Programador", "C"));
+        fatherList.add(new Father(3, "Lazlo", "Escobar", "Perez", 41, "Asistente", "C"));
+        fatherList.add(new Father(4, "Efrain", "Malca", "Mendez", 41, "Secretario", "C"));
+        fatherList.add(new Father(5, "Edgar", "Periera", "LaLo", 41, "Futbolista", "C"));
+        fatherList.add(new Father(6, "Cesar", "Messi", "Centuron", 41, "Psicólogo", "C"));
+        fatherList.add(new Father(7, "Jorge", "Kovaks", "Horna", 41, "Doctor", "C"));
+        fatherList.add(new Father(8, "Mario", "Gonsalez", "Culon", 41, "Maestro", "C"));
+        fatherList.add(new Father(9, "Jhon", "Besso", "Ormeño", 41, "Arquitecto", "C"));
+        fatherList.add(new Father(10, "Dhenis", "Burgos", "Aguado", 41, "Gerente", "C"));
+        fatherList.add(new Father(11, "Jhonatan", "Huaman", "Ambrosio", 41, "Vendedor", "D"));
+        fatherList.add(new Father(12, "Israel", "Salinas", "Titto", 41, "Pescador", "S"));
+        fatherList.add(new Father(13, "Marcos", "Quiroz", "Catalan", 41, "Conductor", "D"));
+
         /*====================================MATHER==============================================================================*/
 
         List<Mather> matherList = new ArrayList<>();
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
-        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "S"));
+        matherList.add(new Mather(0, "Luz", "Medina", "Quiroz", 34, "Secretaria", "C"));
+        matherList.add(new Mather(1, "Lucia", "Corzo", "Plata", 34, "Limpieza", "C"));
+        matherList.add(new Mather(2, "JImena", "Diaz", "Chong", 34, "Abogada", "C"));
+        matherList.add(new Mather(3, "Lizbeth", "Fernandez", "Banega", 34, "Gerente", "C"));
+        matherList.add(new Mather(4, "Deysi", "Torres", "Milito", 34, "Doctora", "C"));
+        matherList.add(new Mather(5, "Manuela", "Ramiro", "Lopez", 34, "Veterinaria", "C"));
+        matherList.add(new Mather(6, "Alma", "Baltodano", "Vargas", 34, "Podologa", "C"));
+        matherList.add(new Mather(7, "Emely", "Malca", "Guerrero", 34, "Contabilidad", "C"));
+        matherList.add(new Mather(8, "Jessica", "Huella", "Hurtado", 34, "Ingeniera", "C"));
+        matherList.add(new Mather(9, "Nore", "Ballon", "Vivar", 34, "Operadora", "C"));
+        matherList.add(new Mather(10, "Sara", "Sicado", "Gallese", 34, "Mesera", "C"));
+        matherList.add(new Mather(11, "Maria", "Espinoza", "Ramos", 34, "Chef", "D"));
+        matherList.add(new Mather(12, "Rosa", "Carbon", "Santimaria", 34, "Asesora", "S"));
+        matherList.add(new Mather(13, "Ana", "Teros", "Callens", 34, "RR.HH", "D"));
 
         /*============================SON==========================================================================================*/
 
@@ -90,21 +92,20 @@ public class MainActivity extends AppCompatActivity {
         id = fatherList.get(id).getId();
         List<Son> sonList = new ArrayList<>();
         sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
-        sonList.add(new Son(0, "Edson", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21, "Abogado", "S"));
+        sonList.add(new Son(1, "Lula", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 6, "Abogado", "S"));
+        sonList.add(new Son(2, "Marcos", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 10, "Abogado", "S"));
+        sonList.add(new Son(3, "Fabiola", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 2, "Abogado", "S"));
+        sonList.add(new Son(4, "Eddie", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 5, "Abogado", "S"));
+        sonList.add(new Son(5, "Erika", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 18, "Abogado", "S"));
+        sonList.add(new Son(6, "Allison", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 9, "Abogado", "S"));
+        sonList.add(new Son(7, "Martha", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 24, "Abogado", "S"));
+        sonList.add(new Son(8, "Jade", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 7, "Abogado", "S"));
+        sonList.add(new Son(9, "0scar", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 12, "Abogado", "S"));
+        sonList.add(new Son(10, "Alex", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 8, "Abogado", "S"));
+        sonList.add(new Son(11, "Diego", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 1, "Abogado", "S"));
+        sonList.add(new Son(12, "Victoria", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 17, "Abogado", "S"));
+        sonList.add(new Son(13, "Josefina", fatherList.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 16, "Abogado", "S"));
+
         /*==================================================================================================================================*/
 
         System.out.println("==========================================");

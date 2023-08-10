@@ -7,19 +7,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import com.dhenis.polomorfismo.MainActivity;
 import com.dhenis.polomorfismo.R;
 
+import com.dhenis.polomorfismo.modelos.Father;
 import com.dhenis.polomorfismo.modelos.ListAdapter;
-import com.dhenis.polomorfismo.modelos.ListElement;
+import com.dhenis.polomorfismo.modelos.Element;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FatherActivity extends AppCompatActivity {
-    private List<ListElement> elements;
+    EditText etBus;
+    public List<Element> elements;
 
     ConstraintLayout cl;
 
@@ -28,7 +34,30 @@ public class FatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_father);
 
-        cl =  findViewById(R.id.btn_return);
+        cl = findViewById(R.id.btn_return);
+        etBus = findViewById(R.id.etBuscar);
+        etBus.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                List<Element> listadap = new ArrayList<>();
+
+                for (Element element : elements) {
+                    if (element)
+
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         cl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,22 +71,20 @@ public class FatherActivity extends AppCompatActivity {
 
     private void init() {
         elements = new ArrayList<>();
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "H", "L", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
-        elements.add(new ListElement("#123456", "Diego", "Mendoza", "Chavez", "Limpieza", 31, "C"));
+        elements.add(new Element(0, "https://cdn-icons-png.flaticon.com/512/3048/3048150.png", "Diego", "Mendoza", "Chavez", 41, "Limpieza", "C"));
+        elements.add(new Element(1, "https://cdn-icons-png.flaticon.com/512/7703/7703912.png", "Eddie", "Elvon", "Carrion", 55, "Administrador", "C"));
+        elements.add(new Element(2, "https://cdn-icons-png.flaticon.com/512/3048/3048150.png", "Luis", "Molina", "Lopez", 41, "Programador", "C"));
+        elements.add(new Element(3, "https://cdn-icons-png.flaticon.com/512/7703/7703912.png", "Lazlo", "Escobar", "Perez", 41, "Asistente", "C"));
+        elements.add(new Element(4, "https://cdn-icons-png.flaticon.com/512/3048/3048150.png", "Efrain", "Malca", "Mendez", 41, "Secretario", "C"));
+        elements.add(new Element(5, "https://cdn-icons-png.flaticon.com/512/7703/7703912.png", "Edgar", "Periera", "LaLo", 41, "Futbolista", "C"));
+        elements.add(new Element(6, "https://cdn-icons-png.flaticon.com/512/3048/3048150.png", "Cesar", "Messi", "Centuron", 41, "Psicólogo", "C"));
+        elements.add(new Element(7, "https://cdn-icons-png.flaticon.com/512/7703/7703912.png", "Jorge", "Kovaks", "Horna", 41, "Doctor", "C"));
+        elements.add(new Element(8, "https://cdn-icons-png.flaticon.com/512/3048/3048150.png", "Mario", "Gonsalez", "Culon", 41, "Maestro", "C"));
+        elements.add(new Element(9, "https://cdn-icons-png.flaticon.com/512/7703/7703912.png", "Jhon", "Besso", "Ormeño", 41, "Arquitecto", "C"));
+        elements.add(new Element(10, "https://cdn-icons-png.flaticon.com/512/3048/3048150.png", "Dhenis", "Burgos", "Aguado", 41, "Gerente", "C"));
+        elements.add(new Element(11, "https://cdn-icons-png.flaticon.com/512/7703/7703912.png", "Jhonatan", "Huaman", "Ambrosio", 41, "Vendedor", "D"));
+        elements.add(new Element(12, "https://cdn-icons-png.flaticon.com/512/3048/3048150.png", "Israel", "Salinas", "Titto", 41, "Pescador", "S"));
+        elements.add(new Element(13, "https://cdn-icons-png.flaticon.com/512/7703/7703912.png", "Marcos", "Quiroz", "Catalan", 41, "Conductor", "D"));
 
         ListAdapter listAdapterFather = new ListAdapter(elements, this);
         RecyclerView recyclerView = findViewById(R.id.listRV);

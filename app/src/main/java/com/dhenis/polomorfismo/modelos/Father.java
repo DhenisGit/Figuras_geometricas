@@ -5,8 +5,8 @@ public class Father {
     private String nombre;
     private String apellido_p;
     private String apellido_m;
-    private Integer edad;
     private  String puesto_laboral;
+    private Integer edad;
     private String estado_civil;
 
     public Father(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad, String puesto_laboral, String estado_civil) {
