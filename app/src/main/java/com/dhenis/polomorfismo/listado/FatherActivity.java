@@ -25,6 +25,7 @@ import java.util.List;
 
 public class FatherActivity extends AppCompatActivity {
     EditText etBus;
+    ListAdapter listAdapterFather;
     public List<Element> elements;
 
     ConstraintLayout cl;
@@ -44,12 +45,15 @@ public class FatherActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                List<Element> listadap = new ArrayList<>();
-
-                for (Element element : elements) {
-                    if (element)
-
+                String searchText = s.toString().toLowerCase();
+                List<Element> filteredList = new ArrayList<>();
+                for (Element father1 : elements) {
+                    String fullName = father1.getName().toLowerCase() + " " + father1.getApellido_p().toLowerCase() + " " + father1.getApellido_m().toLowerCase();
+                    if (fullName.contains(searchText)) {
+                        filteredList.add(father1);
+                    }
                 }
+                listAdapterFather.setListFilter(filteredList);
 
             }
 
@@ -86,7 +90,7 @@ public class FatherActivity extends AppCompatActivity {
         elements.add(new Element(12, "https://cdn-icons-png.flaticon.com/512/3048/3048150.png", "Israel", "Salinas", "Titto", 41, "Pescador", "S"));
         elements.add(new Element(13, "https://cdn-icons-png.flaticon.com/512/7703/7703912.png", "Marcos", "Quiroz", "Catalan", 41, "Conductor", "D"));
 
-        ListAdapter listAdapterFather = new ListAdapter(elements, this);
+        listAdapterFather = new ListAdapter(elements, this);
         RecyclerView recyclerView = findViewById(R.id.listRV);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

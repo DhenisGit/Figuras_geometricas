@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 
 import com.dhenis.polomorfismo.MainActivity;
 import com.dhenis.polomorfismo.R;
@@ -20,7 +23,8 @@ import java.util.List;
 
 public class MatherActivity extends AppCompatActivity {
     List<Element> matherList;
-
+    EditText etBusc;
+    ListAdapter listAdapterMather;
     ConstraintLayout conslay;
 
     @Override
@@ -29,7 +33,33 @@ public class MatherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mather);
 
         conslay = findViewById(R.id.btn_return1);
+        etBusc = findViewById(R.id.etBuscar1);
         init();
+
+        etBusc.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                String searchText = s.toString().toLowerCase();
+                List<Element> filteredList = new ArrayList<>();
+                for (Element father1 : matherList) {
+                    String fullName = father1.getName().toLowerCase() + " " + father1.getApellido_p().toLowerCase() + " " + father1.getApellido_m().toLowerCase();
+                    if (fullName.contains(searchText)) {
+                        filteredList.add(father1);
+                    }
+                }
+                listAdapterMather.setListFilter(filteredList);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         conslay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +87,7 @@ public class MatherActivity extends AppCompatActivity {
         matherList.add(new Element(13, "https://cdn-icons-png.flaticon.com/512/4599/4599017.png", "Ana", "Teros", "Callens", 34, "RR.HH", "D"));
 
 
-        ListAdapter listAdapterMather = new ListAdapter(matherList, this);
+        listAdapterMather = new ListAdapter(matherList, this);
         RecyclerView recyclerView = findViewById(R.id.list_mather);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

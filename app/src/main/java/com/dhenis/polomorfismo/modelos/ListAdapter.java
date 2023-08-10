@@ -33,6 +33,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         this.mData = itemList;
     }
 
+    public void setListFilter(List<Element> listFilter) {
+        mData = listFilter;
+        notifyDataSetChanged();
+    }
+
     public int getItemCount() {
         return mData.size();
     }
