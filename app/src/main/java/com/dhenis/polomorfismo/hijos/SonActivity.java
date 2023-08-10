@@ -2,6 +2,7 @@ package com.dhenis.polomorfismo.hijos;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -55,8 +56,8 @@ public class SonActivity extends AppCompatActivity {
         if (selectedIdMom2 != -1) saveDataMom(selectedIdMom2 - 1);*/
         int selectedId = getIntent().getIntExtra("id", -1);
         if (selectedId != -1) {
-            saveDataDad(selectedId - 1);
-            saveDataMom(selectedId - 1);
+            saveDataDad(selectedId);
+            saveDataMom(selectedId);
         }
     }
 
@@ -69,7 +70,7 @@ public class SonActivity extends AppCompatActivity {
 
     private void saveDataDad(int id) {
         /*==========================DAD=================================*/
-        Dad selectedDad = ListGenerator.generateDadList().get(id);
+        Dad selectedDad = ListGenerator.generateDadList().get(id - 1);
         String fullNameDad = selectedDad.getName() + " " + selectedDad.getApellido_p() + " " + selectedDad.getApellido_m();
         String imgUrlDad = selectedDad.getImage_url().toString();
         Picasso.get().load(imgUrlDad).error(R.drawable.ic_launcher_background).into(imgDad);
@@ -78,7 +79,7 @@ public class SonActivity extends AppCompatActivity {
 
     private void saveDataMom(int id) {
         /*==========================MOM=================================*/
-        Mom selectedMom = ListGenerator.generateMomList().get(id);
+        Mom selectedMom = ListGenerator.generateMomList().get(id - 1);
         String fullNameMom = selectedMom.getName() + " " + selectedMom.getApellido_p() + " " + selectedMom.getApellido_m();
         String imgUrlMom = selectedMom.getImage_url().toString();
         Picasso.get().load(imgUrlMom).error(R.drawable.ic_launcher_background).into(imgMom);
@@ -86,26 +87,16 @@ public class SonActivity extends AppCompatActivity {
     }
 
     private void sonAdapter() {
-        /*int selectedId = getIntent().getIntExtra("id", -1);
-        ListGenerator.assignSonNamesAndSurnames(selectedId);
-        List<Son> matchingSons = ListGenerator.findSonsByDadId(selectedId);
-        // Inicializa el adaptador con la lista de hijos correspondientes
-        sonAdapter = new SonAdapter(matchingSons);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(sonAdapter);
-
-        // Llama al método setSonList para actualizar la lista en el adaptador
-        sonAdapter.setSonList(matchingSons);*/
         int selectedId = getIntent().getIntExtra("id", -1);
+        Log.d(TAG, "====================");
+        Log.d(TAG, "ID: " + selectedId);
+        Log.d(TAG, "====================");
         List<Son> matchingSons = ListGenerator.findSonsByDadId(selectedId);
-
-        // Inicializa el adaptador con la lista de hijos correspondientes
         sonAdapter = new SonAdapter(matchingSons);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(sonAdapter);
-
-        // Llama al método setSonList para actualizar la lista en el adaptador
         sonAdapter.setSonList(matchingSons);
+        sonAdapter.notifyDataSetChanged();
     }
 
 }

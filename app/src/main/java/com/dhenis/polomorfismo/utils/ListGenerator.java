@@ -1,5 +1,7 @@
 package com.dhenis.polomorfismo.utils;
 
+import android.util.Log;
+
 import com.dhenis.polomorfismo.hijos.Son;
 import com.dhenis.polomorfismo.madres.Mom;
 import com.dhenis.polomorfismo.padres.Dad;
@@ -40,18 +42,18 @@ public class ListGenerator {
         return momList;
     }
 
-    public static List<Son> generateSonList() {
+    public static List<Son> generateSonList(int id) {
         List<Son> sonList = new ArrayList<>();
-        sonList.add(new Son(1, "https://cdn-icons-png.flaticon.com/512/2829/2829758.png", "Juan", "Doe", "Martinez", 10));
-        sonList.add(new Son(1, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw1yiLtz68m13IaEiLne3UgyMBCXgNOZdzNG2Io1zjE1xlKUsCb1PevnTYAucKYLCTaTg&usqp=CAU", "Luis", "Johnson", "Garcia", 8));
-        sonList.add(new Son(3, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTygTWiLTxrPSFD-ZxOTzbQOS1MOlXNIgWqeLNOJ_JVk0UZOhmsj4DObOzTwqfSJvpzbU&usqp=CAU", "Maria", "Brown", "Lopez", 12));
-        sonList.add(new Son(4, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7s1c2oHZ3LIo0nfBCOPjErzuzm6R-wnGMp1-goZJFO8f1XnzkS0Pm_BjdPS5CthZxWFY&usqp=CAU", "Ana", "García", "Rodriguez", 9));
-        sonList.add(new Son(5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFmn7X-fL7e3oHBT_YKalbPEx90HLOqHY8OdgjOW9JgoAPPTdOZjWZ_gWbWhjX6iEyZ4I&usqp=CAU", "Carlos", "Miller", "Hernandez", 11));
-        sonList.add(new Son(6, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0oKuGp1ADSV5Gbj-QS2zug-ytqyfpfxBELdD-Y0JfK0_0vS5aL6LKdjdwzpUsV71khhc&usqp=CAU", "Laura", "Davis", "Flores", 7));
-        sonList.add(new Son(7, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTend2dhgrBR38_pjmIKZmRXq-Xs7N_aKBYFfCavL_ima2GKunWKUwWRiBab2ILMIOT8uY&usqp=CAU", "Sergio", "Moore", "Diaz", 13));
-        sonList.add(new Son(8, "https://cdn-icons-png.flaticon.com/512/548/548042.png", "Julia", "Taylor", "Chavez", 6));
-        sonList.add(new Son(9, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFflF1FxbB01H4N3_wNWgI9EMhh5QI2cFbnO0nrOAXG2gHaJPyN5jsIg2OcJIzN2RBUr0&usqp=CAU", "Pedro", "Anderson", "Gomez", 14));
-        sonList.add(new Son(10, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpmWDEKIstRyx4dQuSrzSrzegQuLYqlKsY9BFCmaUq5P8dlMtkV_2BVoGnT6SiPOx8CKk&usqp=CAU", "Valeria", "Wilson", "Torres", 9));
+        sonList.add(new Son(2, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw1yiLtz68m13IaEiLne3UgyMBCXgNOZdzNG2Io1zjE1xlKUsCb1PevnTYAucKYLCTaTg&usqp=CAU", "Luis", generateDadList().get(id).getApellido_p(), generateMomList().get(id).getApellido_p(), 8));
+        sonList.add(new Son(3, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTygTWiLTxrPSFD-ZxOTzbQOS1MOlXNIgWqeLNOJ_JVk0UZOhmsj4DObOzTwqfSJvpzbU&usqp=CAU", "Maria", generateDadList().get(id).getApellido_p(), generateMomList().get(id).getApellido_p(), 12));
+        sonList.add(new Son(4, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7s1c2oHZ3LIo0nfBCOPjErzuzm6R-wnGMp1-goZJFO8f1XnzkS0Pm_BjdPS5CthZxWFY&usqp=CAU", "Ana", generateDadList().get(id).getApellido_p(), generateMomList().get(id).getApellido_p(), 9));
+        sonList.add(new Son(5, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFmn7X-fL7e3oHBT_YKalbPEx90HLOqHY8OdgjOW9JgoAPPTdOZjWZ_gWbWhjX6iEyZ4I&usqp=CAU", "Carlos", generateDadList().get(id).getApellido_p(), generateMomList().get(id).getApellido_p(), 11));
+        sonList.add(new Son(6, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0oKuGp1ADSV5Gbj-QS2zug-ytqyfpfxBELdD-Y0JfK0_0vS5aL6LKdjdwzpUsV71khhc&usqp=CAU", "Laura", generateDadList().get(id).getApellido_p(), generateMomList().get(id).getApellido_p(), 7));
+        sonList.add(new Son(7, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTend2dhgrBR38_pjmIKZmRXq-Xs7N_aKBYFfCavL_ima2GKunWKUwWRiBab2ILMIOT8uY&usqp=CAU", "Sergio", generateDadList().get(id).getApellido_p(), generateMomList().get(id).getApellido_p(), 13));
+        sonList.add(new Son(8, "https://cdn-icons-png.flaticon.com/512/548/548042.png", "Julia", generateDadList().get(id).getApellido_p(), generateMomList().get(id).getApellido_p(), 6));
+        sonList.add(new Son(9, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFflF1FxbB01H4N3_wNWgI9EMhh5QI2cFbnO0nrOAXG2gHaJPyN5jsIg2OcJIzN2RBUr0&usqp=CAU", "Pedro", generateDadList().get(id).getApellido_p(), generateMomList().get(id).getApellido_p(), 14));
+        sonList.add(new Son(10, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpmWDEKIstRyx4dQuSrzSrzegQuLYqlKsY9BFCmaUq5P8dlMtkV_2BVoGnT6SiPOx8CKk&usqp=CAU", "Valeria", generateDadList().get(id).getApellido_p(), generateMomList().get(id).getApellido_p(), 9));
+        sonList.add(new Son(1, "https://cdn-icons-png.flaticon.com/512/2829/2829758.png", "Juan", generateDadList().get(id).getApellido_p(), generateMomList().get(id).getApellido_p(), 10));
         return sonList;
     }
 
@@ -60,32 +62,14 @@ public class ListGenerator {
         List<Dad> dadList = generateDadList();
         for (Dad dad : dadList) {
             if (dad.getId() == dadId) {
-                for (Son son : generateSonList()) {
+                for (Son son : generateSonList(dadId - 1)) {
                     if (son.getId().equals(dad.getId())) {
                         matchingSons.add(son);
                     }
                 }
-                break; // Una vez que se encontró el padre, no es necesario continuar el ciclo
+                break;
             }
         }
         return matchingSons;
     }
-
-    /*public static void assignSonNamesAndSurnames(int dadId) {
-        List<Son> sonList = generateSonList();
-        List<Dad> dadList = generateDadList();
-        List<Mom> momList = generateMomList();
-
-        for (Son son : sonList) {
-            if (son.getId() == dadId) {
-                Dad dad = dadList.get(dadId - 1); // Adjust the index as needed
-                Mom mom = momList.get(dadId - 1); // Adjust the index as needed
-
-                son.setApellido_p(dad.getApellido_p());
-                son.setApellido_m(mom.getApellido_p()); // Use mom's apellido_p here
-
-                break; // Once the son is assigned, exit the loop
-            }
-        }
-    }*/
 }
