@@ -24,16 +24,24 @@
             android:orientation="horizontal"
             android:padding="1dp">
 
-            <ImageView
-                android:id="@+id/imagenview"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="40dp"
+                android:id="@+id/coner"
                 android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:paddingLeft="14dp"
-                android:paddingRight="14dp" />
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imagenview"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+
+
 
             <LinearLayout
                 android:id="@+id/linerlayout"
@@ -43,8 +51,8 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="2dp"
-                android:layout_toEndOf="@+id/imagenview"
-                android:layout_toRightOf="@+id/imagenview"
+                android:layout_toEndOf="@+id/coner"
+                android:layout_toRightOf="@+id/coner"
                 android:orientation="vertical">
 
                 <TextView
