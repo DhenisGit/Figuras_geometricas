@@ -106,12 +106,12 @@ public class SonActivity extends AppCompatActivity {
     }
 
     private void init() {
-
         elementsSon = new ArrayList<>();
+
         elementsSon.add(new Element(0, "https://cdn-icons-png.flaticon.com/512/2829/2829768.png", "Edson", elements.get(0).getApellido_p(), matherList.get(0).getApellido_p(), 21));
         elementsSon.add(new Element(1, "https://cdn-icons-png.flaticon.com/512/3884/3884891.png", "Fabricio", elements.get(1).getApellido_p(), matherList.get(1).getApellido_p(), 21));
         elementsSon.add(new Element(1, "https://cdn-icons-png.flaticon.com/512/2829/2829768.png", "Marcos", elements.get(1).getApellido_p(), matherList.get(1).getApellido_p(), 10));
-        elementsSon.add(new Element(2, "https://cdn-icons-png.flaticon.com/512/3884/3884891.png", "Fabiola", elements.get(4).getApellido_p(), matherList.get(4).getApellido_p(), 2));
+        elementsSon.add(new Element(2, "https://cdn-icons-png.flaticon.com/512/3884/3884891.png", "Alex", elements.get(4).getApellido_p(), matherList.get(4).getApellido_p(), 2));
         elementsSon.add(new Element(2, "https://cdn-icons-png.flaticon.com/512/2829/2829768.png", "Daniela", elements.get(4).getApellido_p(), matherList.get(4).getApellido_p(), 2));
         elementsSon.add(new Element(3, "https://cdn-icons-png.flaticon.com/512/3884/3884891.png", "Eddie", elements.get(5).getApellido_p(), matherList.get(5).getApellido_p(), 5));
         elementsSon.add(new Element(4, "https://cdn-icons-png.flaticon.com/512/2829/2829768.png", "Erika", elements.get(6).getApellido_p(), matherList.get(6).getApellido_p(), 18));
@@ -137,9 +137,7 @@ public class SonActivity extends AppCompatActivity {
 
         Picasso.get().load(url).error(R.drawable.ic_launcher_background).into(imgFsther);
         textName.setText(nameFather + " " + apFather + " " + amFather);
-        /*nombre = recibeName.getString("Nombre");
-        apellido_p = recibeName.getString("apellido_p");
-        apellido_m = recibeName.getString("apellido_m");*/
+
         System.out.println("===================================");
         System.out.println("id del Father: " + elements.get(id).getId());
         System.out.println("Nombre del Father: " + elements.get(id).getName());
@@ -147,26 +145,10 @@ public class SonActivity extends AppCompatActivity {
         System.out.println("Apellido del Mather: " + elements.get(id).getApellido_m());
         System.out.println("==================================");
 
-        /*elementsFather = new ArrayList<>();
-        elementsFather.add(new Element(0, "#ffff", nombre, apellido_p, apellido_m));*/
-
-        /*Bundle recibeName = getIntent().getExtras();
-        String info = recibeName.getString("KeyName");
-
-        textV.setText(info);*/
-
-        /*RecyclerView recyclerView = findViewById(R.id.rv_hijo1);
-        ParentAdapter listAdapterFather = new ParentAdapter(elementsFather, this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(listAdapterFather);*/
     }
 
     private void listMather() {
-        /*activity.init();
-        String nMather = activity.matherList.get(1).getName();
-        String apMather = activity.matherList.get(1).getApellido_p();
-        String amMather = activity.matherList.get(1).getApellido_m();*/
+
         recibeNameMather = getIntent().getExtras();
         id = recibeNameMather.getInt("id");
         String url1 = matherList.get(id).getImg();
@@ -179,9 +161,7 @@ public class SonActivity extends AppCompatActivity {
 
 
         if (getIntent().getExtras() != null) {
-            /*nombre = recibeNameMather.getString("Nombre");
-            apellido_p = recibeNameMather.getString("apellido_p");
-            apellido_m = recibeNameMather.getString("apellido_m");*/
+
             System.out.println("===================================");
             System.out.println("ID de la Mather: " + matherList.get(id).getId());
             System.out.println("Nombre del Mather: " + matherList.get(id).getName());
@@ -217,14 +197,9 @@ public class SonActivity extends AppCompatActivity {
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setHasFixedSize(true);
             recyclerView.setAdapter(listAdapterSon);
-            /*listAdapterSon = (SonAdapter) recyclerView.getAdapter();*/
-            /*listAdapterSon.notifyDataSetChanged();*/
+
         }
 
-
     }
-
-        /*elementsMather = new ArrayList<>();
-        elementsMather.add(new Element(1, "#ffff", nombre, apellido_p, apellido_m));*/
 
 }
