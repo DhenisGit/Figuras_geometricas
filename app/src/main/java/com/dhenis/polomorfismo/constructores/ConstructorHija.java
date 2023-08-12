@@ -1,17 +1,19 @@
 package com.dhenis.polomorfismo;
-public class datos_padre {
+
+public class datos_hija {
     private int id;
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
+    private String imageUrl;
 
-
-    public datos_padre(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad) {
+    public datos_hija(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad, String imageUrl) {
         this.id = id;
         this.nombre = nombre;
         this.apellidoPaterno = apellido_p;
         this.apellidoMaterno = apellido_m;
         this.edad = edad;
+        this.imageUrl = imageUrl;
     }
 
     private int edad;
@@ -24,11 +26,11 @@ public class datos_padre {
         this.id = id;
     }
 
-    public String getNombre() {
+    public String getNombre_Hija() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre_hija(String nombre) {
         this.nombre = nombre;
     }
 
@@ -48,11 +50,15 @@ public class datos_padre {
         this.apellidoMaterno = apellidoMaterno;
     }
 
-    public int getEdad() {
+    public int getEdadHija() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdadHija(int edad) {
         this.edad = edad;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 }

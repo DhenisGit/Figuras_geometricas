@@ -1,38 +1,40 @@
 package com.dhenis.polomorfismo;
-
-public class datos_hija {
+public class datos_madre {
     private int id;
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
+    private String imageUrl;
 
-    public datos_hija(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad) {
+
+    public datos_madre(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad, String imageUrl) {
         this.id = id;
         this.nombre = nombre;
         this.apellidoPaterno = apellido_p;
         this.apellidoMaterno = apellido_m;
         this.edad = edad;
+        this.imageUrl = imageUrl;
     }
 
     private int edad;
 
-    public int getId() {
+    public int getIdMadre() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setIdMadre(int id) {
         this.id = id;
     }
 
-    public String getNombre_Hija() {
+    public String getNombreMadre() {
         return nombre;
     }
 
-    public void setNombre_hija(String nombre) {
+    public void setNombreMadre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getApellidoPaterno() {
+    public String getApellidoPaterno_Madre() {
         return apellidoPaterno;
     }
 
@@ -40,20 +42,23 @@ public class datos_hija {
         this.apellidoPaterno = apellidoPaterno;
     }
 
-    public String getApellidoMaterno() {
+    public String getApellidoMaterno_Madre() {
         return apellidoMaterno;
     }
 
-    public void setApellidoMaterno(String apellidoMaterno) {
+    public void setApellidoMaterno_Madre(String apellidoMaterno) {
         this.apellidoMaterno = apellidoMaterno;
     }
 
-    public int getEdadHija() {
+    public int getEdad_Madre() {
         return edad;
     }
 
-    public void setEdadHija(int edad) {
+    public void setEdad_Madre(int edad) {
         this.edad = edad;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
 }

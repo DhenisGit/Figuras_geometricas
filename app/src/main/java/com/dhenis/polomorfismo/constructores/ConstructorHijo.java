@@ -5,13 +5,15 @@ public class datos_hijos {
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
+    private String imageUrl;
 
-    public datos_hijos(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad) {
+    public datos_hijos(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad, String imageUrl) {
         this.id = id;
         this.nombre = nombre;
         this.apellidoPaterno = apellido_p;
         this.apellidoMaterno = apellido_m;
         this.edad = edad;
+        this.imageUrl = imageUrl;
     }
 
     private int edad;
@@ -56,4 +58,7 @@ public class datos_hijos {
         this.edad = edad;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
 }
