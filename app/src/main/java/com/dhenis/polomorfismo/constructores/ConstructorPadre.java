@@ -1,4 +1,4 @@
-package com.dhenis.polomorfismo;
+package com.dhenis.polomorfismo.constructores;
 public class ConstructorPadre {
     private int id;
     private String nombre;

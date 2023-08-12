@@ -1,4 +1,4 @@
-package com.dhenis.polomorfismo;
+package com.dhenis.polomorfismo.listas;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.dhenis.polomorfismo.MainActivity;
+import com.dhenis.polomorfismo.R;
+import com.dhenis.polomorfismo.constructores.ConstructorHija;
+import com.dhenis.polomorfismo.constructores.ConstructorHijo;
 import com.google.android.material.button.MaterialButton;
 import com.squareup.picasso.Picasso;
 
@@ -13,8 +18,8 @@ import java.util.List;
 
 public class ListaHijos extends AppCompatActivity {
 
-    private List<datos_hijos> hijoList;
-    private List<datos_hija> hijaList;
+    private List<ConstructorHijo> hijoList;
+    private List<ConstructorHija> hijaList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

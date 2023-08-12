@@ -1,4 +1,4 @@
-package com.dhenis.polomorfismo;
+package com.dhenis.polomorfismo.adaptadores;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.TextView;
 import android.widget.ImageView;
+
+import com.dhenis.polomorfismo.R;
+import com.dhenis.polomorfismo.constructores.ConstructorPadre;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;

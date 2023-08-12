@@ -1,12 +1,13 @@
 package com.dhenis.polomorfismo;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.dhenis.polomorfismo.listas.ListaMadre;
+import com.dhenis.polomorfismo.listas.ListaPadre;
 import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btnPadres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, listapadre.class);
+                Intent intent = new Intent(MainActivity.this, ListaPadre.class);
                 startActivity(intent);
             }
         });
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnMadres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, listamadre.class);
+                Intent intent = new Intent(MainActivity.this, ListaMadre.class);
                 startActivity(intent);
             }
         });

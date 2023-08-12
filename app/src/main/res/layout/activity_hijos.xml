@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#333333"
-    tools:context=".hijos">
+    tools:context=".listas.ListaHijos">
+
 
     <TextView
         android:id="@+id/textView"
@@ -19,11 +20,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
-
+        app:layout_constraintVertical_bias="0.019" />
 
     <include
         android:id="@+id/include2"
@@ -34,49 +34,50 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.14" />
+        app:layout_constraintVertical_bias="0.113" />
 
     <include
         android:id="@+id/include3"
-        layout="@layout/datosdelahija"
+        layout="@layout/datos_hija"
         android:layout_width="365dp"
         android:layout_height="68dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include2"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintVertical_bias="0.023" />
 
 
     <include
         android:id="@+id/includePadre"
         layout="@layout/parientes_padre"
-        android:layout_width="245dp"
-        android:layout_height="116dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.604" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.024" />
 
     <include
         android:id="@+id/includeMadre"
         layout="@layout/parientes_madre"
-        android:layout_width="245dp"
-        android:layout_height="116dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.796" />
-
+        app:layout_constraintTop_toBottomOf="@+id/includePadre"
+        app:layout_constraintVertical_bias="0.083" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="258dp"
-        android:layout_height="81dp"
+        android:layout_width="245dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:lineHeight="44.02px"
         android:text="Parientes"
@@ -85,10 +86,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.399" />
+        app:layout_constraintTop_toBottomOf="@+id/include3"
+        app:layout_constraintVertical_bias="0.022" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/otrabusqueda"
@@ -102,8 +103,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898"
+        app:layout_constraintTop_toBottomOf="@+id/includeMadre"
+        app:layout_constraintVertical_bias="0.206"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

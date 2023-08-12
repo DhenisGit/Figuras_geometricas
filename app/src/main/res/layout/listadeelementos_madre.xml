@@ -18,62 +18,96 @@
         android:layout_marginTop="0dp"
         android:paddingTop="0dp">
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="1dp">
+             <androidx.cardview.widget.CardView
+                 android:layout_marginStart="7dp"
+                 android:layout_width="50dp"
+                 android:layout_height="50dp"
+                 app:cardCornerRadius="40dp"
+                 android:id="@+id/gool"
+                 android:layout_centerVertical="true"
+                 >
+
 
             <ImageView
                 android:id="@+id/imagenview"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:paddingLeft="14dp"
-                android:paddingRight="14dp" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
 
-            <LinearLayout
+                />
+             </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/linerlayout"
-                android:layout_width="wrap_content"
+                android:layout_width="277dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="2dp"
-                android:layout_toEndOf="@+id/imagenview"
-                android:layout_toRightOf="@+id/imagenview"
+                android:layout_marginEnd="71dp"
+                android:layout_toEndOf="@+id/gool"
+                android:layout_toRightOf="@+id/gool"
                 android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_below="@+id/textnameMadre"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toEndOf="@+id/textlaboral"
+                    android:src="@drawable/maletin"
+                    app:layout_constraintStart_toEndOf="@+id/textlaboral"
+                    app:layout_constraintTop_toBottomOf="@+id/textnameMadre" />
 
                 <TextView
                     android:id="@+id/textnameMadre"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="2dp"
                     android:text=" German Gonzalo Quispe"
                     android:textColor="#F8F9F9 "
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textlaboral"
-                    android:layout_width="153dp"
-                    android:layout_height="31dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="6dp"
+                    android:layout_width="101dp"
+                    android:layout_height="19dp"
+                    android:layout_below="@+id/textnameMadre"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="11dp"
                     android:text="Puesto laboral"
                     android:textColor="#F8F9F9 "
-                    android:textSize="15sp" />
-            </LinearLayout>
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textnameMadre"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
             <TextView
-                android:id="@+id/estatus"
+                android:id="@+id/edadM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="6dp"
                 android:layout_marginRight="6dp"
                 android:text="39 años"
                 android:textColor="#F8F9F9 "
@@ -85,16 +119,19 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="35dp"
-                android:layout_marginEnd="45dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginRight="18dp"
                 android:text="Estado civil :"
                 android:textColor="#F8F9F9 " />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="35dp"
-                android:layout_marginEnd="17dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginRight="7dp"
                 android:text="C"
                 android:textColor="#F8F9F9 " />
         </RelativeLayout>

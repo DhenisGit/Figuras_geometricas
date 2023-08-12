@@ -1,4 +1,4 @@
-package com.dhenis.polomorfismo;
+package com.dhenis.polomorfismo.databases;
 
 public class DatabaseContract {
     public static final String DATABASE_NAME = "padres.db";

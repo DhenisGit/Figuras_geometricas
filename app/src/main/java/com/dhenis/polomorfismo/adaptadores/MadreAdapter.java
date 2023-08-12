@@ -1,4 +1,4 @@
-package com.dhenis.polomorfismo;
+package com.dhenis.polomorfismo.adaptadores;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,16 +8,19 @@ import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.TextView;
 import android.widget.ImageView;
+
+import com.dhenis.polomorfismo.R;
+import com.dhenis.polomorfismo.constructores.ConstructorMadre;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MadreAdapter extends ArrayAdapter<datos_madre> {
+public class MadreAdapter extends ArrayAdapter<ConstructorMadre> {
 
-    private List<datos_madre> originalList;
-    private List<datos_madre> filteredList;
+    private List<ConstructorMadre> originalList;
+    private List<ConstructorMadre> filteredList;
 
-    public MadreAdapter(Context context, List<datos_madre> madreList) {
+    public MadreAdapter(Context context, List<ConstructorMadre> madreList) {
         super(context, 0, madreList);
         this.originalList = madreList; // Asignar madreList a originalList
         this.filteredList = new ArrayList<>(originalList);
@@ -29,7 +32,7 @@ public class MadreAdapter extends ArrayAdapter<datos_madre> {
     }
 
     @Override
-    public datos_madre getItem(int position) {
+    public ConstructorMadre getItem(int position) {
         return filteredList.get(position);
     }
 
@@ -38,7 +41,7 @@ public class MadreAdapter extends ArrayAdapter<datos_madre> {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.listadeelementos, parent, false);
         }
-        datos_madre madre = getItem(position);
+        ConstructorMadre madre = getItem(position);
 
         TextView textViewNombre = convertView.findViewById(R.id.textname);
         String nombreCompleto = madre.getNombreMadre() + " " + madre.getApellidoPaterno_Madre() + " " + madre.getApellidoMaterno_Madre();
@@ -66,12 +69,12 @@ public class MadreAdapter extends ArrayAdapter<datos_madre> {
             protected FilterResults performFiltering(CharSequence charSequence) {
                 String searchText = charSequence.toString().toLowerCase();
                 FilterResults results = new FilterResults();
-                List<datos_madre> filteredList = new ArrayList<>();
+                List<ConstructorMadre> filteredList = new ArrayList<>();
 
                 if (searchText.isEmpty()) {
                     filteredList.addAll(originalList); // Use originalList instead of filteredList
                 } else {
-                    for (datos_madre madre : originalList) { // Use originalList instead of filteredList
+                    for (ConstructorMadre madre : originalList) { // Use originalList instead of filteredList
                         if (madre.getNombreMadre().toLowerCase().contains(searchText) ||
                                 madre.getApellidoPaterno_Madre().toLowerCase().contains(searchText) ||
                                 madre.getApellidoMaterno_Madre().toLowerCase().contains(searchText)) {
@@ -86,7 +89,7 @@ public class MadreAdapter extends ArrayAdapter<datos_madre> {
 
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                filteredList = (List<datos_madre>) filterResults.values;
+                filteredList = (List<ConstructorMadre>) filterResults.values;
                 notifyDataSetChanged();
             }
         };

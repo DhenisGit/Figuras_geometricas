@@ -1,5 +1,5 @@
-package com.dhenis.polomorfismo;
-public class datos_madre {
+package com.dhenis.polomorfismo.constructores;
+public class ConstructorMadre {
     private int id;
     private String nombre;
     private String apellidoPaterno;
@@ -7,7 +7,7 @@ public class datos_madre {
     private String imageUrl;
 
 
-    public datos_madre(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad, String imageUrl) {
+    public ConstructorMadre(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad, String imageUrl) {
         this.id = id;
         this.nombre = nombre;
         this.apellidoPaterno = apellido_p;

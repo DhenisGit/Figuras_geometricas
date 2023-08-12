@@ -1,4 +1,4 @@
-package com.dhenis.polomorfismo;
+package com.dhenis.polomorfismo.listas;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -8,6 +8,14 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
+
+import com.dhenis.polomorfismo.adaptadores.PadreAdapter;
+import com.dhenis.polomorfismo.R;
+import com.dhenis.polomorfismo.constructores.ConstructorHija;
+import com.dhenis.polomorfismo.constructores.ConstructorHijo;
+import com.dhenis.polomorfismo.constructores.ConstructorMadre;
+import com.dhenis.polomorfismo.constructores.ConstructorPadre;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,9 +24,9 @@ public class ListaPadre extends AppCompatActivity {
     private PadreAdapter adapter;
     private SearchView searchView;
     private List<ConstructorPadre> padreList;
-    private List<datos_madre> madreList;
-    private List<datos_hijos> hijoList;
-    private List<datos_hija> hijaList;
+    private List<ConstructorMadre> madreList;
+    private List<ConstructorHijo> hijoList;
+    private List<ConstructorHija> hijaList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +50,9 @@ public class ListaPadre extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ConstructorPadre padreSeleccionado = padreList.get(position);
-                datos_madre madreCorrespondiente = madreList.get(position);
-                datos_hijos hijoSeleccionado = hijoList.get(position);
-                datos_hija hijaCorrespondiente = hijaList.get(position);
+                ConstructorMadre madreCorrespondiente = madreList.get(position);
+                ConstructorHijo hijoSeleccionado = hijoList.get(position);
+                ConstructorHija hijaCorrespondiente = hijaList.get(position);
 
                 Intent intent = new Intent(ListaPadre.this, ListaHijos.class);
                 intent.putExtra("nombrePadre", padreSeleccionado.getNombre());
@@ -134,39 +142,39 @@ public class ListaPadre extends AppCompatActivity {
         return padreList;
     }
 
-    private List<datos_madre> obtenerListaMadreDirectamente() {
-        List<datos_madre> madreList = new ArrayList<>();
-        madreList.add(new datos_madre(0, "María", "Gómez", "López", 29, "https://i.pinimg.com/564x/1a/40/3f/1a403faaf4584cd99ce3efb7c41da3fc--story-ideas-beautiful-people.jpg"));
-        madreList.add(new datos_madre(1, "Ana", "Fernández", "Ramírez", 44, "https://i.pinimg.com/564x/5e/eb/27/5eeb27d93265f440c96321c66c56cf65.jpg"));
-        madreList.add(new datos_madre(2, "Laura", "Martínez", "Vega", 31, "https://i.pinimg.com/564x/17/2f/73/172f737ae8211e91a774fc544777f542.jpg"));
-        madreList.add(new datos_madre(3, "Sofía", "Rodríguez", "Silva", 38, "https://i.pinimg.com/280x280_RS/31/de/06/31de065f03cffd477df7a9c1315f630c.jpg"));
-        madreList.add(new datos_madre(4, "Elena", "Pérez", "Mendoza", 33, "https://i.pinimg.com/1200x/d9/23/14/d923143b56d6779f2c6c54fd31903da4.jpg"));
-        madreList.add(new datos_madre(5, "Carolina", "Lara", "Chávez", 35, "https://i.pinimg.com/1200x/34/bc/c4/34bcc4ea2ab56c11d8c7a4a3eaf48743.jpg"));
-        madreList.add(new datos_madre(6, "Isabel", "González", "Ríos", 50, "https://i.pinimg.com/1200x/ed/20/d3/ed20d3e8b422dbf97946b003cfa3371a.jpg"));
-        madreList.add(new datos_madre(7, "Rosa", "Sánchez", "Hernández", 28, "https://i.pinimg.com/564x/15/20/d1/1520d1406f583b6dd2c1cfdb1b72afcb.jpg"));
-        madreList.add(new datos_madre(8, "Patricia", "Nava", "Soto", 46, "https://i.pinimg.com/1200x/6a/9f/a8/6a9fa8b298b5ee32628bd300f5c10a95.jpg"));
-        madreList.add(new datos_madre(9, "Luisa", "Cruz", "Ortega", 42, "https://i.pinimg.com/736x/9a/ff/b3/9affb34cd6e1e0579caa7a9e1f1d8136.jpg"));
-        madreList.add(new datos_madre(10, "Carmen", "Hernández", "Gómez", 39, "https://i.pinimg.com/originals/08/f5/0e/08f50e31a7e6fab84ed2d9eed6eb9112.jpg"));
-        madreList.add(new datos_madre(11, "Mónica", "Ramos", "López", 27, "https://i.pinimg.com/736x/9e/53/26/9e53265a033e8ad018bfa3fd0c600298.jpg"));
-        madreList.add(new datos_madre(12, "Alejandra", "Soto", "Fernández", 37, "https://i.pinimg.com/564x/3f/ac/58/3fac58b4887c0453c64ffb413ef50986.jpg"));
-        madreList.add(new datos_madre(13, "Gloria", "Guzmán", "Martínez", 29, "https://i.pinimg.com/474x/1e/e2/ba/1ee2baf1fddfd0c36d64a7558f449419.jpg"));
-        /*madreList.add(new datos_madre(14, "Beatriz", "Vargas", "Ramírez", 34, ""));
-        madreList.add(new datos_madre(15, "Verónica", "Díaz", "Silva", 40, ""));
-        madreList.add(new datos_madre(16, "Catalina", "Castro", "Mendoza", 31, ""));
-        madreList.add(new datos_madre(17, "Valeria", "Pérez", "Gómez", 26, ""));
-        madreList.add(new datos_madre(18, "Eva", "López", "Hernández", 41, ""));
-        madreList.add(new datos_madre(19, "Pamela", "García", "Vega", 36, ""));
-        madreList.add(new datos_madre(20, "Margarita", "Martínez", "Silva", 47, ""));
-        madreList.add(new datos_madre(21, "Lorena", "González", "Ramírez", 32, ""));
-        madreList.add(new datos_madre(22, "Juana", "Pérez", "López", 45, ""));
-        madreList.add(new datos_madre(23, "Raquel", "Rodríguez", "Silva", 28, ""));
-        madreList.add(new datos_madre(24, "Cecilia", "Lara", "Chávez", 33, ""));
-        madreList.add(new datos_madre(25, "Mireya", "Sánchez", "Hernández", 29, ""));
-        madreList.add(new datos_madre(26, "Fabiola", "Nava", "Soto", 36, ""));
-        madreList.add(new datos_madre(27, "Roxana", "Cruz", "Ortega", 42, ""));
-        madreList.add(new datos_madre(28, "Jimena", "Hernández", "Gómez", 27, ""));
-        madreList.add(new datos_madre(29, "Adriana", "Ramos", "López", 35, ""));
-        madreList.add(new datos_madre(30, "Claudia", "Soto", "Fernández", 46, ""));*/
+    private List<ConstructorMadre> obtenerListaMadreDirectamente() {
+        List<ConstructorMadre> madreList = new ArrayList<>();
+        madreList.add(new ConstructorMadre(0, "María", "Gómez", "López", 29, "https://i.pinimg.com/564x/1a/40/3f/1a403faaf4584cd99ce3efb7c41da3fc--story-ideas-beautiful-people.jpg"));
+        madreList.add(new ConstructorMadre(1, "Ana", "Fernández", "Ramírez", 44, "https://i.pinimg.com/564x/5e/eb/27/5eeb27d93265f440c96321c66c56cf65.jpg"));
+        madreList.add(new ConstructorMadre(2, "Laura", "Martínez", "Vega", 31, "https://i.pinimg.com/564x/17/2f/73/172f737ae8211e91a774fc544777f542.jpg"));
+        madreList.add(new ConstructorMadre(3, "Sofía", "Rodríguez", "Silva", 38, "https://i.pinimg.com/280x280_RS/31/de/06/31de065f03cffd477df7a9c1315f630c.jpg"));
+        madreList.add(new ConstructorMadre(4, "Elena", "Pérez", "Mendoza", 33, "https://i.pinimg.com/1200x/d9/23/14/d923143b56d6779f2c6c54fd31903da4.jpg"));
+        madreList.add(new ConstructorMadre(5, "Carolina", "Lara", "Chávez", 35, "https://i.pinimg.com/1200x/34/bc/c4/34bcc4ea2ab56c11d8c7a4a3eaf48743.jpg"));
+        madreList.add(new ConstructorMadre(6, "Isabel", "González", "Ríos", 50, "https://i.pinimg.com/1200x/ed/20/d3/ed20d3e8b422dbf97946b003cfa3371a.jpg"));
+        madreList.add(new ConstructorMadre(7, "Rosa", "Sánchez", "Hernández", 28, "https://i.pinimg.com/564x/15/20/d1/1520d1406f583b6dd2c1cfdb1b72afcb.jpg"));
+        madreList.add(new ConstructorMadre(8, "Patricia", "Nava", "Soto", 46, "https://i.pinimg.com/1200x/6a/9f/a8/6a9fa8b298b5ee32628bd300f5c10a95.jpg"));
+        madreList.add(new ConstructorMadre(9, "Luisa", "Cruz", "Ortega", 42, "https://i.pinimg.com/736x/9a/ff/b3/9affb34cd6e1e0579caa7a9e1f1d8136.jpg"));
+        madreList.add(new ConstructorMadre(10, "Carmen", "Hernández", "Gómez", 39, "https://i.pinimg.com/originals/08/f5/0e/08f50e31a7e6fab84ed2d9eed6eb9112.jpg"));
+        madreList.add(new ConstructorMadre(11, "Mónica", "Ramos", "López", 27, "https://i.pinimg.com/736x/9e/53/26/9e53265a033e8ad018bfa3fd0c600298.jpg"));
+        madreList.add(new ConstructorMadre(12, "Alejandra", "Soto", "Fernández", 37, "https://i.pinimg.com/564x/3f/ac/58/3fac58b4887c0453c64ffb413ef50986.jpg"));
+        madreList.add(new ConstructorMadre(13, "Gloria", "Guzmán", "Martínez", 29, "https://i.pinimg.com/474x/1e/e2/ba/1ee2baf1fddfd0c36d64a7558f449419.jpg"));
+        /*madreList.add(new ConstructorMadre(14, "Beatriz", "Vargas", "Ramírez", 34, ""));
+        madreList.add(new ConstructorMadre(15, "Verónica", "Díaz", "Silva", 40, ""));
+        madreList.add(new ConstructorMadre(16, "Catalina", "Castro", "Mendoza", 31, ""));
+        madreList.add(new ConstructorMadre(17, "Valeria", "Pérez", "Gómez", 26, ""));
+        madreList.add(new ConstructorMadre(18, "Eva", "López", "Hernández", 41, ""));
+        madreList.add(new ConstructorMadre(19, "Pamela", "García", "Vega", 36, ""));
+        madreList.add(new ConstructorMadre(20, "Margarita", "Martínez", "Silva", 47, ""));
+        madreList.add(new ConstructorMadre(21, "Lorena", "González", "Ramírez", 32, ""));
+        madreList.add(new ConstructorMadre(22, "Juana", "Pérez", "López", 45, ""));
+        madreList.add(new ConstructorMadre(23, "Raquel", "Rodríguez", "Silva", 28, ""));
+        madreList.add(new ConstructorMadre(24, "Cecilia", "Lara", "Chávez", 33, ""));
+        madreList.add(new ConstructorMadre(25, "Mireya", "Sánchez", "Hernández", 29, ""));
+        madreList.add(new ConstructorMadre(26, "Fabiola", "Nava", "Soto", 36, ""));
+        madreList.add(new ConstructorMadre(27, "Roxana", "Cruz", "Ortega", 42, ""));
+        madreList.add(new ConstructorMadre(28, "Jimena", "Hernández", "Gómez", 27, ""));
+        madreList.add(new ConstructorMadre(29, "Adriana", "Ramos", "López", 35, ""));
+        madreList.add(new ConstructorMadre(30, "Claudia", "Soto", "Fernández", 46, ""));*/
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -184,79 +192,79 @@ public class ListaPadre extends AppCompatActivity {
         return madreList;
     }
 
-    private List<datos_hijos> obtenerListaHijosDirectamente() {
-        List<datos_hijos> hijoList = new ArrayList<>();
+    private List<ConstructorHijo> obtenerListaHijosDirectamente() {
+        List<ConstructorHijo> hijoList = new ArrayList<>();
 
-        hijoList.add(new datos_hijos(0, "Isaì", null, null, 10, "https://cdn.pixabay.com/photo/2013/12/13/11/53/children-227849_1280.jpg"));
-        hijoList.add(new datos_hijos(1, "Jorge", null, null, 8, "https://cdnuploads.aa.com.tr/uploads/PhotoGallery/2021/11/29/thumbs_b2_b6426968c5f285239ae708c7f33a126b.jpg"));
-        hijoList.add(new datos_hijos(2, "Luis", null, null, 9, "https://previews.123rf.com/images/zouzou1/zouzou11309/zouzou1130900414/22125312-un-ni%C3%B1o-muchos-rostros-serie-de-colegial-inteligente-6-7-a%C3%B1os-de-edad.jpg"));
-        hijoList.add(new datos_hijos(3, "Carlos", null, null, 11, "https://www.crushpixel.com/big-static18/preview4/child-kid-boy-portrait-smiling-3053585.jpg"));
-        hijoList.add(new datos_hijos(4, "Andrés", null, null, 7, "https://i.pinimg.com/236x/8c/19/76/8c19768b9462e4a993d7f44a26318423--cute-boys-kids-boys.jpg"));
-        hijoList.add(new datos_hijos(5, "Miguel", null, null, 10, "https://img.freepik.com/foto-gratis/nino-worldface-russian-fondo-blanco_53876-146323.jpg?w=2000"));
-        hijoList.add(new datos_hijos(6, "Juan", null, null, 9, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy9Fas-p8reAEVoaGGRwJCYkGJolFu9ILeTg&usqp=CAU"));
-        hijoList.add(new datos_hijos(7, "Alejandro", null, null, 8, "https://uvn-brightspot.s3.amazonaws.com/assets/vixes/btg/curiosidades.batanga.com/files/Cientificos-demuestran-que-los-ninos-confian-mas-en-las-caras-bonitas-1_0.jpg"));
-        hijoList.add(new datos_hijos(8, "José", null, null, 12, "https://e00-elmundo.uecdn.es/elmundo/imagenes/2006/06/02/1149265094_0.jpg"));
-        hijoList.add(new datos_hijos(9, "David", null, null, 11, "https://previews.123rf.com/images/luislouro/luislouro1504/luislouro150400028/38687957-rostros-j%C3%B3venes-boy-haciendo-aislados-en-blanco.jpg"));
-        hijoList.add(new datos_hijos(10, "Francisco", null, null, 10, "https://i.pinimg.com/564x/b9/8b/26/b98b267aff0d8ec8e769dc6732004e06.jpg"));
-        hijoList.add(new datos_hijos(11, "Diego", null, null, 9, "https://i.pinimg.com/736x/74/58/7e/74587ecf6964ed7412012d70a7800995.jpg"));
-        hijoList.add(new datos_hijos(12, "Daniel", null, null, 7, "https://i.pinimg.com/564x/f4/bb/1e/f4bb1e50a5d196676b84a95beeb88419.jpg"));
-        hijoList.add(new datos_hijos(13, "Antonio", null, null, 8, "https://i.pinimg.com/564x/42/01/51/420151799fed62c0b3f95deb6961070d.jpg"));
-        /*hijoList.add(new datos_hijos(14, "Ricardo", null, null, 10));
-        hijoList.add(new datos_hijos(15, "Roberto", null, null, 11));
-        hijoList.add(new datos_hijos(16, "Eduardo", null, null, 9));
-        hijoList.add(new datos_hijos(17, "Manuel", null, null, 12));
-        hijoList.add(new datos_hijos(18, "Hugo", null, null, 8));
-        hijoList.add(new datos_hijos(19, "Fernando", null, null, 10));
-        hijoList.add(new datos_hijos(20, "Pedro", null, null, 11));
-        hijoList.add(new datos_hijos(21, "Gustavo", null, null, 7));
-        hijoList.add(new datos_hijos(22, "Sergio", null, null, 9));
-        hijoList.add(new datos_hijos(23, "Lorenzo", null, null, 10));
-        hijoList.add(new datos_hijos(24, "Rafael", null, null, 8));
-        hijoList.add(new datos_hijos(25, "Enrique", null, null, 10));
-        hijoList.add(new datos_hijos(26, "Mariano", null, null, 9));
-        hijoList.add(new datos_hijos(27, "Agustín", null, null, 11));
-        hijoList.add(new datos_hijos(28, "Óscar", null, null, 7));
-        hijoList.add(new datos_hijos(29, "Emilio", null, null, 8));
-        hijoList.add(new datos_hijos(30, "Nicolás", null, null, 10));*/
+        hijoList.add(new ConstructorHijo(0, "Isaì", null, null, 10, "https://cdn.pixabay.com/photo/2013/12/13/11/53/children-227849_1280.jpg"));
+        hijoList.add(new ConstructorHijo(1, "Jorge", null, null, 8, "https://cdnuploads.aa.com.tr/uploads/PhotoGallery/2021/11/29/thumbs_b2_b6426968c5f285239ae708c7f33a126b.jpg"));
+        hijoList.add(new ConstructorHijo(2, "Luis", null, null, 9, "https://previews.123rf.com/images/zouzou1/zouzou11309/zouzou1130900414/22125312-un-ni%C3%B1o-muchos-rostros-serie-de-colegial-inteligente-6-7-a%C3%B1os-de-edad.jpg"));
+        hijoList.add(new ConstructorHijo(3, "Carlos", null, null, 11, "https://www.crushpixel.com/big-static18/preview4/child-kid-boy-portrait-smiling-3053585.jpg"));
+        hijoList.add(new ConstructorHijo(4, "Andrés", null, null, 7, "https://i.pinimg.com/236x/8c/19/76/8c19768b9462e4a993d7f44a26318423--cute-boys-kids-boys.jpg"));
+        hijoList.add(new ConstructorHijo(5, "Miguel", null, null, 10, "https://img.freepik.com/foto-gratis/nino-worldface-russian-fondo-blanco_53876-146323.jpg?w=2000"));
+        hijoList.add(new ConstructorHijo(6, "Juan", null, null, 9, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy9Fas-p8reAEVoaGGRwJCYkGJolFu9ILeTg&usqp=CAU"));
+        hijoList.add(new ConstructorHijo(7, "Alejandro", null, null, 8, "https://uvn-brightspot.s3.amazonaws.com/assets/vixes/btg/curiosidades.batanga.com/files/Cientificos-demuestran-que-los-ninos-confian-mas-en-las-caras-bonitas-1_0.jpg"));
+        hijoList.add(new ConstructorHijo(8, "José", null, null, 12, "https://e00-elmundo.uecdn.es/elmundo/imagenes/2006/06/02/1149265094_0.jpg"));
+        hijoList.add(new ConstructorHijo(9, "David", null, null, 11, "https://previews.123rf.com/images/luislouro/luislouro1504/luislouro150400028/38687957-rostros-j%C3%B3venes-boy-haciendo-aislados-en-blanco.jpg"));
+        hijoList.add(new ConstructorHijo(10, "Francisco", null, null, 10, "https://i.pinimg.com/564x/b9/8b/26/b98b267aff0d8ec8e769dc6732004e06.jpg"));
+        hijoList.add(new ConstructorHijo(11, "Diego", null, null, 9, "https://i.pinimg.com/736x/74/58/7e/74587ecf6964ed7412012d70a7800995.jpg"));
+        hijoList.add(new ConstructorHijo(12, "Daniel", null, null, 7, "https://i.pinimg.com/564x/f4/bb/1e/f4bb1e50a5d196676b84a95beeb88419.jpg"));
+        hijoList.add(new ConstructorHijo(13, "Antonio", null, null, 8, "https://i.pinimg.com/564x/42/01/51/420151799fed62c0b3f95deb6961070d.jpg"));
+        /*hijoList.add(new ConstructorHijo(14, "Ricardo", null, null, 10));
+        hijoList.add(new ConstructorHijo(15, "Roberto", null, null, 11));
+        hijoList.add(new ConstructorHijo(16, "Eduardo", null, null, 9));
+        hijoList.add(new ConstructorHijo(17, "Manuel", null, null, 12));
+        hijoList.add(new ConstructorHijo(18, "Hugo", null, null, 8));
+        hijoList.add(new ConstructorHijo(19, "Fernando", null, null, 10));
+        hijoList.add(new ConstructorHijo(20, "Pedro", null, null, 11));
+        hijoList.add(new ConstructorHijo(21, "Gustavo", null, null, 7));
+        hijoList.add(new ConstructorHijo(22, "Sergio", null, null, 9));
+        hijoList.add(new ConstructorHijo(23, "Lorenzo", null, null, 10));
+        hijoList.add(new ConstructorHijo(24, "Rafael", null, null, 8));
+        hijoList.add(new ConstructorHijo(25, "Enrique", null, null, 10));
+        hijoList.add(new ConstructorHijo(26, "Mariano", null, null, 9));
+        hijoList.add(new ConstructorHijo(27, "Agustín", null, null, 11));
+        hijoList.add(new ConstructorHijo(28, "Óscar", null, null, 7));
+        hijoList.add(new ConstructorHijo(29, "Emilio", null, null, 8));
+        hijoList.add(new ConstructorHijo(30, "Nicolás", null, null, 10));*/
 
         return hijoList;
     }
 
 
-    private List<datos_hija> obtenerListaHijasDirectamente() {
-        List<datos_hija> hijaList = new ArrayList<>();
+    private List<ConstructorHija> obtenerListaHijasDirectamente() {
+        List<ConstructorHija> hijaList = new ArrayList<>();
 
-        hijaList.add(new datos_hija(1, "María", null, null, 10, "https://meragor.com/files/styles//ava_800_800_wm/avatar-225119-037129.png"));
-        hijaList.add(new datos_hija(1, "Ana", null, null, 8, "https://meragor.com/files/styles//ava_800_800_wm/avatar-224509-025720.png"));
-        hijaList.add(new datos_hija(2, "Sofía", null, null, 9, "https://i.pinimg.com/236x/69/3e/5d/693e5d6fcc00772143f8ee871cb562b5.jpg"));
-        hijaList.add(new datos_hija(3, "Carla", null, null, 11, "https://i.pinimg.com/236x/c3/1f/a2/c31fa28038e9a1777a6275303217f5f4.jpg"));
-        hijaList.add(new datos_hija(4, "Elena", null, null, 7, "https://i.pinimg.com/236x/69/3e/5d/693e5d6fcc00772143f8ee871cb562b5.jpg"));
-        hijaList.add(new datos_hija(5, "Luisa", null, null, 10, "https://i.pinimg.com/236x/f6/a4/13/f6a413c4aa52d9a37ec1a2db8228c02c.jpg"));
-        hijaList.add(new datos_hija(6, "Valeria", null, null, 9, "https://i.pinimg.com/736x/ac/29/bd/ac29bd369ce8b2746ed3083de46db70f--boys-and-girls-cadillac.jpg"));
-        hijaList.add(new datos_hija(7, "Camila", null, null, 8, "https://i.pinimg.com/originals/7e/ef/58/7eef587a87766adbafc1aaa61c82f9a3.jpg"));
-        hijaList.add(new datos_hija(8, "Isabel", null, null, 12, "https://i.pinimg.com/564x/c8/b5/b8/c8b5b8e569559291c1175fdc4e42be20--newborn-baby-photography-photography-kids.jpg"));
-        hijaList.add(new datos_hija(9, "Daniela", null, null, 11, "https://i.pinimg.com/736x/4e/af/db/4eafdb8b63397a02de7aee981e043fb8.jpg"));
-        hijaList.add(new datos_hija(10, "Fernanda", null, null, 10, "https://i.pinimg.com/1200x/be/a8/59/bea85929a73d80e46f138f0bfd36857a.jpg"));
-        hijaList.add(new datos_hija(11, "Laura", null, null, 9, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEA6CDR0N-_RA8DY14cN6a3NlZk2041YybQ&usqp=CAU"));
-        hijaList.add(new datos_hija(12, "Alicia", null, null, 7, "https://i.pinimg.com/originals/7f/ff/98/7fff983b3bf23417da579167668ce0b2.jpg"));
-        hijaList.add(new datos_hija(13, "Giselle", null, null, 8, "https://i.pinimg.com/736x/ed/3a/2a/ed3a2aa7aa0b110dd6bc4d43c70b1a76--user-profile-cute-babies.jpg"));
-        /*hijaList.add(new datos_hija(14, "Valentina", null, null, 10, ""));
-        hijaList.add(new datos_hija(15, "Roberta", null, null, 11));
-        hijaList.add(new datos_hija(16, "Lucía", null, null, 9));
-        hijaList.add(new datos_hija(17, "Carmen", null, null, 12));
-        hijaList.add(new datos_hija(18, "Fabiola", null, null, 8));
-        hijaList.add(new datos_hija(19, "Andrea", null, null, 10));
-        hijaList.add(new datos_hija(20, "Patricia", null, null, 11));
-        hijaList.add(new datos_hija(21, "Gloria", null, null, 7));
-        hijaList.add(new datos_hija(22, "Lorena", null, null, 9));
-        hijaList.add(new datos_hija(23, "Martha", null, null, 10));
-        hijaList.add(new datos_hija(24, "Rosa", null, null, 8));
-        hijaList.add(new datos_hija(25, "Cecilia", null, null, 10));
-        hijaList.add(new datos_hija(26, "Mariana", null, null, 9));
-        hijaList.add(new datos_hija(27, "Catalina", null, null, 11));
-        hijaList.add(new datos_hija(28, "Eugenia", null, null, 7));
-        hijaList.add(new datos_hija(29, "Renata", null, null, 8));
-        hijaList.add(new datos_hija(30, "Natalia", null, null, 10));*/
+        hijaList.add(new ConstructorHija(1, "María", null, null, 10, "https://meragor.com/files/styles//ava_800_800_wm/avatar-225119-037129.png"));
+        hijaList.add(new ConstructorHija(1, "Ana", null, null, 8, "https://meragor.com/files/styles//ava_800_800_wm/avatar-224509-025720.png"));
+        hijaList.add(new ConstructorHija(2, "Sofía", null, null, 9, "https://i.pinimg.com/236x/69/3e/5d/693e5d6fcc00772143f8ee871cb562b5.jpg"));
+        hijaList.add(new ConstructorHija(3, "Carla", null, null, 11, "https://i.pinimg.com/236x/c3/1f/a2/c31fa28038e9a1777a6275303217f5f4.jpg"));
+        hijaList.add(new ConstructorHija(4, "Elena", null, null, 7, "https://i.pinimg.com/236x/69/3e/5d/693e5d6fcc00772143f8ee871cb562b5.jpg"));
+        hijaList.add(new ConstructorHija(5, "Luisa", null, null, 10, "https://i.pinimg.com/236x/f6/a4/13/f6a413c4aa52d9a37ec1a2db8228c02c.jpg"));
+        hijaList.add(new ConstructorHija(6, "Valeria", null, null, 9, "https://i.pinimg.com/736x/ac/29/bd/ac29bd369ce8b2746ed3083de46db70f--boys-and-girls-cadillac.jpg"));
+        hijaList.add(new ConstructorHija(7, "Camila", null, null, 8, "https://i.pinimg.com/originals/7e/ef/58/7eef587a87766adbafc1aaa61c82f9a3.jpg"));
+        hijaList.add(new ConstructorHija(8, "Isabel", null, null, 12, "https://i.pinimg.com/564x/c8/b5/b8/c8b5b8e569559291c1175fdc4e42be20--newborn-baby-photography-photography-kids.jpg"));
+        hijaList.add(new ConstructorHija(9, "Daniela", null, null, 11, "https://i.pinimg.com/736x/4e/af/db/4eafdb8b63397a02de7aee981e043fb8.jpg"));
+        hijaList.add(new ConstructorHija(10, "Fernanda", null, null, 10, "https://i.pinimg.com/1200x/be/a8/59/bea85929a73d80e46f138f0bfd36857a.jpg"));
+        hijaList.add(new ConstructorHija(11, "Laura", null, null, 9, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEA6CDR0N-_RA8DY14cN6a3NlZk2041YybQ&usqp=CAU"));
+        hijaList.add(new ConstructorHija(12, "Alicia", null, null, 7, "https://i.pinimg.com/originals/7f/ff/98/7fff983b3bf23417da579167668ce0b2.jpg"));
+        hijaList.add(new ConstructorHija(13, "Giselle", null, null, 8, "https://i.pinimg.com/736x/ed/3a/2a/ed3a2aa7aa0b110dd6bc4d43c70b1a76--user-profile-cute-babies.jpg"));
+        /*hijaList.add(new ConstructorHija(14, "Valentina", null, null, 10, ""));
+        hijaList.add(new ConstructorHija(15, "Roberta", null, null, 11));
+        hijaList.add(new ConstructorHija(16, "Lucía", null, null, 9));
+        hijaList.add(new ConstructorHija(17, "Carmen", null, null, 12));
+        hijaList.add(new ConstructorHija(18, "Fabiola", null, null, 8));
+        hijaList.add(new ConstructorHija(19, "Andrea", null, null, 10));
+        hijaList.add(new ConstructorHija(20, "Patricia", null, null, 11));
+        hijaList.add(new ConstructorHija(21, "Gloria", null, null, 7));
+        hijaList.add(new ConstructorHija(22, "Lorena", null, null, 9));
+        hijaList.add(new ConstructorHija(23, "Martha", null, null, 10));
+        hijaList.add(new ConstructorHija(24, "Rosa", null, null, 8));
+        hijaList.add(new ConstructorHija(25, "Cecilia", null, null, 10));
+        hijaList.add(new ConstructorHija(26, "Mariana", null, null, 9));
+        hijaList.add(new ConstructorHija(27, "Catalina", null, null, 11));
+        hijaList.add(new ConstructorHija(28, "Eugenia", null, null, 7));
+        hijaList.add(new ConstructorHija(29, "Renata", null, null, 8));
+        hijaList.add(new ConstructorHija(30, "Natalia", null, null, 10));*/
 
         return hijaList;
     }

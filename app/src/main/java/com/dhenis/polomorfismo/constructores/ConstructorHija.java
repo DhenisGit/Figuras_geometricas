@@ -1,13 +1,13 @@
-package com.dhenis.polomorfismo;
+package com.dhenis.polomorfismo.constructores;
 
-public class datos_hija {
+public class ConstructorHija {
     private int id;
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
     private String imageUrl;
 
-    public datos_hija(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad, String imageUrl) {
+    public ConstructorHija(Integer id, String nombre, String apellido_p, String apellido_m, Integer edad, String imageUrl) {
         this.id = id;
         this.nombre = nombre;
         this.apellidoPaterno = apellido_p;
